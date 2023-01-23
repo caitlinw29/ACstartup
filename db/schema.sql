@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS acnh_db;
+CREATE DATABASE acnh_db;
