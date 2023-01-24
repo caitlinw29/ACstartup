@@ -1,4 +1,117 @@
 :root {
-  --white: #ffffff;
-  --black: #000000;
+  --accent1: #227c9d;
+  --accent2: #ffe3dc;
+  --accent3: #dbb4ad;
+  --background: #a2ad91;
+  --text: #3a2d32;
+}
+
+body {
+  background-color: var(--background);
+  font-family: "Tahoma", sans-serif;
+  color: var(--text);
+}
+
+a {
+  color: var(--accent1);
+}
+
+a:hover {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+.margin-small {
+  margin: 1%;
+}
+
+.margin-right {
+  margin-right: 15%;
+}
+
+.nav {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  padding-right: 1%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+li a {
+  display: block;
+  color: var(--text);
+  text-align: center;
+  padding: 20px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: var(--accent1);
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+.gallery {
+  background: var(--text);
+  margin-bottom: 7%;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+}
+
+#gallery1 {
+  background: url("/img/logo.png");
+}
+
+#gallery2 {
+  background: url("/img/favicon.png");
+}
+
+#gallery3 {
+  background: url("/img/logo2.png");
+}
+
+input {
+  width: 75%;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.button {
+  width: 50%;
+  background-color: var(--text);
+  color: var(--accent2);
+  font-size: 1.5rem;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--background);
+}
+
+form {
+  border-radius: 5px;
+  width: 75%;
+  margin: 0 auto;
 }

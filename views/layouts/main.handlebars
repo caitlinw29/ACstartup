@@ -5,28 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACNH Startup Guide</title>
-    <link rel="icon" type="image/x-icon" href="/img/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
-    
+    <link rel="stylesheet" href="/css/flickity.min.css" media="screen">
   </head>
 
   <body>
-    <nav>
-     
+    <nav class="nav margin-small">
+      <a href="/" class="margin-right"><img src="/img/logo2.png" alt="logo"/></a>
+
+      <ul>
+        <li><a href="#"><ion-icon name="person"></ion-icon> <br/>Login</a></li>
+        <li><a href="#"><ion-icon name="create"></ion-icon> <br/>Signup</a></li>
+        <li><a href="#"><ion-icon name="information-circle"></ion-icon> <br/>Info</a></li>
+      </ul>
+
     </nav>
 
     <main>
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
-      
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-    <script src="/js/logout.js"></script>
-    {{/if}}
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- Top 2 scripts for icons, third script for gallery -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="/js/flickity.pkgd.min.js"></script>
   </body>
 </html>
