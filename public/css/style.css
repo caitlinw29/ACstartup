@@ -121,7 +121,7 @@ form {
   margin: 0 auto;
 }
 
-#welcome-form {
+.login-form {
   background: var(--lightpink);
   margin: 0 10%;
   padding: 5%;
@@ -179,8 +179,11 @@ footer {
   text-align: center;
 }
 
+footer ul {
+  padding: 0;
+}
+
 footer ul li {
-  margin-left: 16px;
   list-style-type: none;
   font-size: 1.5rem;
 }
@@ -197,7 +200,8 @@ footer ul li {
 }
 
 @media screen and (max-width: 500px) {
-  #welcome-form {
-    margin: 10%;
+  .login-form {
+    margin-top: 15%;
+    border-radius: 50px;
   }
 }
