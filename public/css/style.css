@@ -1,23 +1,28 @@
 :root {
-  --accent1: #227c9d;
-  --accent2: #ffe3dc;
-  --accent3: #dbb4ad;
-  --background: #a2ad91;
-  --text: #3a2d32;
+  --blue: #227c9d;
+  --lightpink: #ffe3dc;
+  --darkpink: #dbb4ad;
+  --green: #a2ad91;
+  --dark: #3a2d32;
+  --background: ;
+  --text: ;
+  --accent1: ;
+  --accent2: ;
+  --accent3: ;
 }
 
 body {
-  background-color: var(--background);
+  background-color: var(--green);
   font-family: "Tahoma", sans-serif;
-  color: var(--text);
+  color: var(--dark);
 }
 
 a {
-  color: var(--accent1);
+  color: var(--blue);
 }
 
 a:hover {
-  color: var(--accent2);
+  color: var(--darkpink);
   text-decoration: none;
 }
 
@@ -34,7 +39,7 @@ a:hover {
   flex-direction: row;
 }
 
-ul {
+.nav-ul {
   list-style-type: none;
   margin: 0;
   padding-left: 0;
@@ -46,22 +51,22 @@ ul {
   flex: 1;
 }
 
-li a {
+.nav-ul li a {
   display: block;
-  color: var(--text);
+  color: var(--dark);
   text-align: center;
   padding: 20px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: var(--accent1);
-  color: var(--accent2);
+.nav-ul li a:hover {
+  background-color: var(--blue);
+  color: var(--lightpink);
   text-decoration: none;
 }
 
 .gallery {
-  background: var(--text);
+  background: var(--dark);
   margin-bottom: 7%;
 }
 
@@ -95,23 +100,104 @@ input {
 }
 
 .button {
-  width: 50%;
-  background-color: var(--text);
-  color: var(--accent2);
+  width: 40%;
+  background-color: var(--dark);
+  color: var(--lightpink);
   font-size: 1.5rem;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 3% 5%;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin: 2% auto;
 }
 
 .button:hover {
-  background-color: var(--background);
+  background-color: var(--blue);
 }
 
 form {
   border-radius: 5px;
   width: 75%;
   margin: 0 auto;
+}
+
+#welcome-form {
+  background: var(--lightpink);
+  margin: 0 10%;
+  padding: 5%;
+  border-radius: 100px;
+}
+
+hr {
+  width: 33%;
+  height: 3px;
+  background-color: var(--dark);
+  border: 0;
+  margin-bottom: 5%;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.grid p {
+  line-height: 1.75;
+  padding: 0 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.grid li {
+  list-style-type: none;
+  padding: 2%;
+  flex-basis: 50%;
+  text-align: center;
+}
+
+.grid li ion-icon {
+  color: var(--blue);
+  font-size: 4rem;
+}
+
+.grid li h4 {
+  font-size: 30px;
+  margin: 25px 0;
+}
+
+/*Footer Section*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--dark);
+  color: var(--lightpink);
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul li {
+  margin-left: 16px;
+  list-style-type: none;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 800px) {
+  .grid li {
+    flex-basis: 100%;
+    padding: 20px;
+  }
+
+  footer {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #welcome-form {
+    margin: 10%;
+  }
 }

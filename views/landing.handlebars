@@ -10,27 +10,67 @@
   </div>
 
   <div class="text-center">
-    <h2>Welcome to the ACNH Startup Guide!</h2>
-    <p>Don't have an account? <a href="/signup">Sign up</a></p>
+    <div id="welcome-form">
+      <h2>Welcome to the ACNH Startup Guide!</h2>
 
-    <form>
-      <label for="user-email">Email</label>
-      <input type="email" id="user-email" name="email" placeholder="sample@gmail.com">
+      {{!-- Log-in form --}}
+      <form>
+        <label for="user-email">Email</label>
+        <input type="email" id="user-email" name="email" placeholder="sample@gmail.com">
 
-      <label for="user-password">Password</label>
-      <input type="password" id="user-password" name="password" placeholder="********">
+        <label for="user-password">Password</label>
+        <input type="password" id="user-password" name="password" placeholder="********">
 
-    
-      <button type="submit" class="button" id="login-button">Login</button>
-    </form>
+      
+        <button type="submit" class="button" id="login-button">Login</button>
+      </form>
+      <p>Don't have an account? <a href="/signup">Sign up</a></p>
 
+    </div>
+   
 
     {{!-- About Section --}}
-    <div class="display-flex justify-center">
-      <p class="w-75"> ACNH Startup Guide is designed to be a fully interactive experience. It is not an article describing the steps you need to take. Instead, you will be guided through the starting process with full customization to your own goals in the game. </p>
-    </div>
+    <section>
+      <div class="flex-column align-center mt-4">
+        <h3 class="w-75 mt-1"> New to ACNH? </h3>
+        <p class="w-75"> Or are you tired of remembering every small step you need to take when you restart your game? Just want a beautiful to-do list for your daily in-game tasks, or a place to keep track of all your collections? Maybe you want to be able to quickly see the requirements to unlock an item or event in the game? </p>
+        <p class="w-75"> The startup guide is designed for you! Are you ready for a fully interactive experience that guides you through the starting process with FULL customization to your own goals in the game? </p>
+        <h3 class="w-75 mt-5">Features</h3>
+        <hr>
 
+        <ul class="grid">
+          <li>
+            <ion-icon name="ban"></ion-icon>
+            <h4>Free</h4>
+            <p>This guide is completely free to use. No ads, no "in-app" purchases.</p>
+          </li>
+          <li>
+            <ion-icon name="checkmark-done"></ion-icon>
+            <h4>Interactive</h4>
+            <p>Don't know what to do or where to start? More than just an article, this guide will walk you through every step of the game that you wish it to!</p>
+          </li>
+          <li>
+            <ion-icon name="options"></ion-icon>
+            <h4>Customizable</h4>
+            <p>It can be hard to find an app's design scheme you like... so choose how YOU want your guide to look in the settings!</p>
+          </li>
+          <li>
+            <ion-icon name="search"></ion-icon>
+            <h4>Intuitive</h4>
+            <p> Upfront collection buttons and search features will allow you to spend more time in your game than searching around on the app! </p>
+          </li>
+        </ul>
+         
+      </div>
+    </section>
   </div>
-
+  
+  <footer>
+    <p>ACNH Startup Guide is a fan-made website and is in no way affiliated with Nintendo. I claim no ownership of the game or it's components. This guide is meant to be used alongside the Animal Crossing: New Horizons game.</p>
+    <ul>
+      <li><a href="#">TOS</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+    </ul>
+  </footer>
 
 </section>
