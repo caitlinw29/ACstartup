@@ -41,4 +41,13 @@ router.get("/login", async (req, res) => {
   }
 });
 
+//route to render the about page
+router.get("/about", async (req, res) => {
+  try {
+    res.render("about");
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 module.exports = router;
