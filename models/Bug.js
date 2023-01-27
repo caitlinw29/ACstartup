@@ -14,11 +14,16 @@ Bug.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     sellPrice: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    // isDonated: {
+    //   type: DataTypes.BOOLEAN,
+    //   defaultValue: false,
+    // },
   },
   {
     sequelize,
