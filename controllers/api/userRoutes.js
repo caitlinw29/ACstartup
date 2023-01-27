@@ -30,11 +30,9 @@ router.post("/login", async (req, res) => {
     });
     //if there is no user, return error message
     if (!userData) {
-      res
-        .status(400)
-        .json({
-          message: "Your username or password is incorrect. Please try again",
-        });
+      res.status(400).json({
+        message: "Your email or password is incorrect. Please try again",
+      });
       return;
     }
 
@@ -42,11 +40,9 @@ router.post("/login", async (req, res) => {
     const validPassword = await userData.checkPassword(req.body.password);
     //if password is invalid, return error message
     if (!validPassword) {
-      res
-        .status(400)
-        .json({
-          message: "Your username or passwword is incorrect. Please try again",
-        });
+      res.status(400).json({
+        message: "Your username or passwword is incorrect. Please try again",
+      });
       return;
     }
     //store session state as being logged in

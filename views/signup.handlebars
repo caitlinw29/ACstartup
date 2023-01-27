@@ -1,16 +1,15 @@
 <!--Form to signup with a new user-->
-
 <div class="form text-center">
-  <form>
+  <form id="signup-form">
     <h2>Create an account</h2>
     <label for="email-signup">Email</label>
-    <input type="email" id="email-signup" name="email" placeholder="sample@gmail.com">
+    <input type="email" id="email-signup" name="email" placeholder="sample@gmail.com" autocomplete="on">
 
     <label for="password-signup">Password</label>
-    <input type="password" id="password-signup" name="password-signup" placeholder="********">
+    <input type="password" id="password-signup" name="password-signup" placeholder="********" autocomplete="off">
 
     <label for="password-reenter" class="col-form-label">Re-enter password</label>
-    <input type="password" name="password-reenter" id="password-reenter" placeholder="********">
+    <input type="password" name="password-reenter" id="password-reenter" placeholder="********" autocomplete="off">
 
     <button type="submit" class="button" id="signup-button">Sign up!</button>
   </form>
