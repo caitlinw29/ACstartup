@@ -1,10 +1,14 @@
 const router = require("express").Router();
-const { User } = require("../models");
+const { User, Bug } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
 router.get("/", async (req, res) => {
   try {
+    if (req.session.logged_in) {
+      res.redirect("/home");
+      return;
+    }
     res.render("landing", {
       logged_in: req.session.logged_in,
     });
@@ -53,7 +57,12 @@ router.get("/about", async (req, res) => {
 //route to render the home page, only if user is signed in
 router.get("/home", withAuth, async (req, res) => {
   try {
+    const bugData = await Bug.findAll();
+
+    const bugs = bugData.map((bug) => bug.get({ plain: true }));
+
     res.render("home", {
+      bugs,
       logged_in: true,
     });
   } catch (err) {
