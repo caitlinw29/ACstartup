@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Bug } = require("../models");
+const { User, Bug, Fish } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
@@ -58,11 +58,14 @@ router.get("/about", async (req, res) => {
 router.get("/home", withAuth, async (req, res) => {
   try {
     const bugData = await Bug.findAll();
-
     const bugs = bugData.map((bug) => bug.get({ plain: true }));
+
+    const fishData = await Fish.findAll();
+    const fish = fishData.map((fish) => fish.get({ plain: true }));
 
     res.render("home", {
       bugs,
+      fish,
       logged_in: true,
     });
   } catch (err) {
