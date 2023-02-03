@@ -59,6 +59,10 @@ router.get("/home", withAuth, async (req, res) => {
   try {
     const bugData = await Bug.findAll();
     const bugs = bugData.map((bug) => bug.get({ plain: true }));
+    if (!bugs.length) {
+      res.redirect("/seed");
+      return;
+    }
 
     const fishData = await Fish.findAll();
     const fish = fishData.map((fish) => fish.get({ plain: true }));
@@ -68,6 +72,21 @@ router.get("/home", withAuth, async (req, res) => {
       fish,
       logged_in: true,
     });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//route to render the seed page, only if logged in
+router.get("/seed", withAuth, async (req, res) => {
+  try {
+    const bugData = await Bug.findAll();
+    const bugs = bugData.map((bug) => bug.get({ plain: true }));
+    if (bugs.length) {
+      res.redirect("/home");
+      return;
+    }
+    res.render("seed");
   } catch (err) {
     res.status(500).json(err);
   }

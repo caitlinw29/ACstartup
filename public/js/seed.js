@@ -50,8 +50,11 @@ const saveFish = async () => {
     });
 };
 
-
 document.querySelector("#seedBtn").addEventListener("click", function () {
   saveBugs();
   saveFish();
+});
+
+document.querySelector("#homeBtn").addEventListener("click", function () {
+  document.location.replace("/home");
 });

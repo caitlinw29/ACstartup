@@ -25,7 +25,6 @@ const signupForm = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      // If successful, redirect the browser to the profile form
       document.location.replace("/home");
     } else {
       alert("Account already exists for this email!");
