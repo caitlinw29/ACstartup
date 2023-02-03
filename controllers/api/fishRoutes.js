@@ -8,6 +8,16 @@ router.post("/", async (req, res) => {
     const newFish = await Fish.create({
       name: req.body.name,
       sellPrice: req.body.sellPrice,
+      shadow: req.body.shadow,
+      monthN: req.body.monthN,
+      monthS: req.body.monthS,
+      isAllDay: req.body.isAllDay,
+      isAllYear: req.body.isAllYear,
+      time: req.body.time,
+      location: req.body.location,
+      cjPrice: req.body.cjPrice,
+      image: req.body.image,
+      icon: req.body.icon,
     });
 
     res.status(200).json(newFish);
@@ -22,6 +32,7 @@ router.post("/:id", async (req, res) => {
     const newFish = await User_Fish.create({
       userId: req.session.user_id,
       fishId: req.body.id,
+      fishName: req.body.name,
       isDonated: true,
     });
 

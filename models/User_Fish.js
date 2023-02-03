@@ -25,6 +25,13 @@ User_Fish.init(
         key: "id",
       },
     },
+    fishName: {
+      type: DataTypes.STRING,
+      references: {
+        model: "fish",
+        key: "name",
+      },
+    },
     isDonated: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

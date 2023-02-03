@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const { Bug, User_Bug } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 // route to create all bugs
 router.post("/", async (req, res) => {
@@ -9,6 +8,15 @@ router.post("/", async (req, res) => {
     const newBug = await Bug.create({
       name: req.body.name,
       sellPrice: req.body.sellPrice,
+      monthN: req.body.monthN,
+      monthS: req.body.monthS,
+      isAllDay: req.body.isAllDay,
+      isAllYear: req.body.isAllYear,
+      time: req.body.time,
+      location: req.body.location,
+      flickPrice: req.body.flickPrice,
+      image: req.body.image,
+      icon: req.body.icon,
     });
 
     res.status(200).json(newBug);
@@ -24,6 +32,7 @@ router.post("/:id", async (req, res) => {
     const newBug = await User_Bug.create({
       userId: req.session.user_id,
       bugId: req.body.id,
+      bugName: req.body.name,
       isDonated: true,
     });
 

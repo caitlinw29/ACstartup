@@ -1,29 +1,55 @@
-<h1>Home</h1>
-{{!-- {{#each bugs as |bug| }}
-  <div class="card">
+{{#each bugs as |bug| }}
+  <div class="card text-center">
     <div class="card-header">
-      <h2>
-        {{bug.name}} 
-      </h2>
-      <p>
-        Sell price: {{bug.sellPrice}} bells
-      </p>
+      <img class="creature-img" src="{{bug.image}}" alt="{{bug.name}}"/>
+      <h2> {{bug.name}} </h2>   
     </div>
-    <p class="card-contents"><button class="bugDonateBtn" id="{{bug.id}}">Donate</button></p>
+  
+    <p class="card-contents">
+      <p> Sell price: {{bug.sellPrice}} bells </p>
+      <p> Flick price: {{bug.flickPrice}} bells </p>
+      {{#if isAllYear}}
+      <p> Available: All Year </p>
+      {{else}}
+      <p> Available: {{bug.monthN}} </p>
+      {{/if}}
+
+      {{#if isAllDay}}
+      <p> Time: All Day</p>
+      {{else}}
+      <p> Time: {{bug.time}} </p>
+      {{/if}}
+      <p> Location: {{bug.location}}</p>
+      <button class="bugDonateBtn" id="{{bug.id}}" data-name="{{bug.name}}">Donate</button>
+    </p>
   </div>
-{{/each}} --}}
+{{/each}}
 
 {{#each fish as |fish| }}
-  <div class="card">
+  <div class="card text-center">
     <div class="card-header">
-      <h2>
-        {{fish.name}} 
-      </h2>
-      <p>
-        Sell price: {{fish.sellPrice}} bells
-      </p>
+      <img class="creature-img" src="{{fish.image}}" alt="{{fish.name}}"/>
+      <h2> {{fish.name}} </h2>
     </div>
-    <p class="card-contents"><button class="fishDonateBtn" id="{{fish.id}}">Donate</button></p>
+
+    <p class="card-contents">
+      <p> Sell price: {{fish.sellPrice}} bells </p>
+      <p> CJ price: {{fish.cjPrice}} bells </p>
+      {{#if isAllYear}}
+      <p> Available: All Year </p>
+      {{else}}
+      <p> Available: {{fish.monthN}} </p>
+      {{/if}}
+
+      {{#if isAllDay}}
+      <p> Time: All Day</p>
+      {{else}}
+      <p> Time: {{fish.time}} </p>
+      {{/if}}
+      <p> Location: {{fish.location}}</p>
+      <p> Shadow: {{fish.shadow}} </p>
+      <button class="fishDonateBtn" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
+    </p>
   </div>
 {{/each}}
 

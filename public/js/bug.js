@@ -1,9 +1,10 @@
 const donateBug = async (e) => {
   let id = e.currentTarget.id;
+  let name = e.currentTarget.dataset.name;
 
   const response = await fetch(`/api/bugs/${id}`, {
     method: "POST",
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ id, name }),
     headers: {
       "Content-Type": "application/json",
     },

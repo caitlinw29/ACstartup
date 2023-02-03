@@ -1,9 +1,10 @@
 const donateFish = async (e) => {
   let id = e.currentTarget.id;
+  let name = e.currentTarget.dataset.name;
 
   const response = await fetch(`/api/fish/${id}`, {
     method: "POST",
-    body: JSON.stringify({ id }),
+    body: JSON.stringify({ id, name }),
     headers: {
       "Content-Type": "application/json",
     },

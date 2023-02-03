@@ -25,6 +25,13 @@ User_Bug.init(
         key: "id",
       },
     },
+    bugName: {
+      type: DataTypes.STRING,
+      references: {
+        model: "bug",
+        key: "name",
+      },
+    },
     isDonated: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,

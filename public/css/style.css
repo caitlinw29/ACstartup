@@ -197,16 +197,15 @@ footer ul li {
 #faq-ul {
   padding: 0;
   margin: 0 5%;
-
 }
 
-#about-ul li, 
+#about-ul li,
 #faq-ul li {
   list-style-type: none;
   font-size: 1.2rem;
 }
 
-#faq-ul li { 
+#faq-ul li {
   background: var(--blue);
   color: var(--lightpink);
   margin: 5% 0;
@@ -214,8 +213,8 @@ footer ul li {
   border-radius: 15px;
 }
 
-#faq-ul li:nth-child(odd) { 
-  background: var(--lightpink); 
+#faq-ul li:nth-child(odd) {
+  background: var(--lightpink);
   color: var(--dark);
 }
 
@@ -230,7 +229,12 @@ footer ul li {
 }
 
 #contact-form {
-  margin: 5%;  
+  margin: 5%;
+}
+
+.creature-img {
+  height: 15%;
+  width: 15%;
 }
 
 @media (max-width: 800px) {
