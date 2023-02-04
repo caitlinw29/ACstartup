@@ -1,11 +1,11 @@
 {{#each bugs as |bug| }}
   <div class="card text-center">
     <div class="card-header">
-      <img class="creature-img" src="{{bug.image}}" alt="{{bug.name}}"/>
+      <img class="creature-img" src="{{bug.icon}}" alt="{{bug.name}}"/>
       <h2> {{bug.name}} </h2>   
     </div>
   
-    <p class="card-contents">
+    <div class="card-contents">
       <p> Sell price: {{bug.sellPrice}} bells </p>
       <p> Flick price: {{bug.flickPrice}} bells </p>
       {{#if isAllYear}}
@@ -21,18 +21,18 @@
       {{/if}}
       <p> Location: {{bug.location}}</p>
       <button class="bugDonateBtn" id="{{bug.id}}" data-name="{{bug.name}}">Donate</button>
-    </p>
+    </div>
   </div>
 {{/each}}
 
 {{#each fish as |fish| }}
   <div class="card text-center">
     <div class="card-header">
-      <img class="creature-img" src="{{fish.image}}" alt="{{fish.name}}"/>
+      <img class="creature-img" src="{{fish.icon}}" alt="{{fish.name}}"/>
       <h2> {{fish.name}} </h2>
     </div>
 
-    <p class="card-contents">
+    <div class="card-contents">
       <p> Sell price: {{fish.sellPrice}} bells </p>
       <p> CJ price: {{fish.cjPrice}} bells </p>
       {{#if isAllYear}}
@@ -49,9 +49,37 @@
       <p> Location: {{fish.location}}</p>
       <p> Shadow: {{fish.shadow}} </p>
       <button class="fishDonateBtn" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
-    </p>
+    </div>
+  </div>
+{{/each}}
+
+{{#each sea as |sea| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <img class="creature-img" src="{{sea.icon}}" alt="{{sea.name}}"/>
+      <h2> {{sea.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p> Sell price: {{sea.sellPrice}} bells </p>
+      {{#if isAllYear}}
+      <p> Available: All Year </p>
+      {{else}}
+      <p> Available: {{sea.monthN}} </p>
+      {{/if}}
+
+      {{#if isAllDay}}
+      <p> Time: All Day</p>
+      {{else}}
+      <p> Time: {{sea.time}} </p>
+      {{/if}}
+      <p> Speed: {{sea.speed}}</p>
+      <p> Shadow: {{sea.shadow}} </p>
+      <button class="seaDonateBtn" id="{{sea.id}}" data-name="{{sea.name}}">Donate</button>
+    </div>
   </div>
 {{/each}}
 
 <script src="./js/bug.js"></script>
 <script src="./js/fish.js"></script>
+<script src="./js/sea.js"></script>

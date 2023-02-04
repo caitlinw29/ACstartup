@@ -1,8 +1,8 @@
-const donateBug = async (e) => {
+const donateSea = async (e) => {
   let id = e.currentTarget.id;
   let name = e.currentTarget.dataset.name;
 
-  const response = await fetch(`/api/bugs/${id}`, {
+  const response = await fetch(`/api/sea/${id}`, {
     method: "POST",
     body: JSON.stringify({ id, name }),
     headers: {
@@ -17,5 +17,5 @@ const donateBug = async (e) => {
   }
 };
 
-let bugDonateButtons = document.querySelectorAll(".bugDonateBtn");
-bugDonateButtons.forEach((btn) => btn.addEventListener("click", donateBug));
+let seaDonateButtons = document.querySelectorAll(".seaDonateBtn");
+seaDonateButtons.forEach((btn) => btn.addEventListener("click", donateSea));

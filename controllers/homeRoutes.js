@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Bug, Fish } = require("../models");
+const { User, Bug, Fish, Sea } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
@@ -67,9 +67,13 @@ router.get("/home", withAuth, async (req, res) => {
     const fishData = await Fish.findAll();
     const fish = fishData.map((fish) => fish.get({ plain: true }));
 
+    const seaData = await Sea.findAll();
+    const sea = seaData.map((sea) => sea.get({ plain: true }));
+
     res.render("home", {
       bugs,
       fish,
+      sea,
       logged_in: true,
     });
   } catch (err) {
@@ -77,9 +81,10 @@ router.get("/home", withAuth, async (req, res) => {
   }
 });
 
-//route to render the seed page, only if logged in
+//route to render the seed page, only if logged in - one time route for first user
 router.get("/seed", withAuth, async (req, res) => {
   try {
+    //checks if data already exists
     const bugData = await Bug.findAll();
     const bugs = bugData.map((bug) => bug.get({ plain: true }));
     if (bugs.length) {

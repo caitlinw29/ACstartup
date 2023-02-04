@@ -4,6 +4,9 @@ const Bug = require("./Bug");
 const User_Bug = require("./User_Bug");
 const Fish = require("./Fish");
 const User_Fish = require("./User_Fish");
+const Sea = require("./Sea");
+const User_Sea = require("./User_Sea");
+
 
 
 //one to one relationship between profile and user
@@ -43,4 +46,17 @@ User_Fish.belongsTo(Fish, {
 });
 
 
-module.exports = { User, Profile, Bug, User_Bug, Fish, User_Fish };
+User.belongsToMany(Sea, {through: 'User_Sea'});
+Sea.belongsToMany(User, {through: 'User_Sea'});
+
+User_Sea.belongsTo(User, {
+  foreignKey: 'userId',
+  as: 'user'
+});
+
+User_Sea.belongsTo(Sea, {
+  foreignKey: 'seaId',
+  as: 'sea'
+});
+
+module.exports = { User, Profile, Bug, User_Bug, Fish, User_Fish, Sea, User_Sea };

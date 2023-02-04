@@ -6,7 +6,8 @@ router.post("/", async (req, res) => {
   try {
     //create a bug using the req.body
     const newBug = await Bug.create({
-      name: req.body.name,
+      id: req.body.id,
+      name: req.body.capitalName,
       sellPrice: req.body.sellPrice,
       monthN: req.body.monthN,
       monthS: req.body.monthS,
@@ -41,30 +42,5 @@ router.post("/:id", async (req, res) => {
     res.status(400).json(err);
   }
 });
-
-//donate a bug when signed in - across all users
-// router.put("/:id", withAuth, async (req, res) => {
-//   try {
-//     const bugData = await User_Bug.update(
-//       {
-//         isDonated: true,
-//       },
-//       {
-//         where: {
-//           bugId: req.params.id,
-//         },
-//       }
-//     );
-
-//     if (!bugData) {
-//       res.status(404).json({ message: "No bug found" });
-//       return;
-//     }
-
-//     res.status(200).json(bugData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 module.exports = router;
