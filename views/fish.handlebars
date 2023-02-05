@@ -1,0 +1,23 @@
+{{#each fish as |fish| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <img class="creature-img" src="{{fish.icon}}" alt="{{fish.name}}"/>
+      <h2> {{fish.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p> Sell price: {{fish.sellPriceString}} bells </p>
+      <p> CJ price: {{fish.cjPriceString}} bells </p>
+      <p> Available: {{fish.monthN}} </p>
+      <p> Months: {{fish.monthArrayN}}</p>
+      <p> Time: {{fish.time}} </p>
+      {{Char-ChSalmon fish.name}}
+      {{greaterThanZeroFish fish.total_catch}}
+      <p> Location: {{fish.location}}</p>
+      <p> Shadow: {{fish.shadow}} </p>
+      <button class="fishDonateBtn donateButton" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
+    </div>
+  </div>
+{{/each}}
+
+<script src="./js/fish.js"></script>

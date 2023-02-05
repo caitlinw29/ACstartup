@@ -1,0 +1,21 @@
+{{#each sea as |sea| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <img class="creature-img" src="{{sea.icon}}" alt="{{sea.name}}"/>
+      <h2> {{sea.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p> Sell price: {{sea.sellPriceString}} bells </p>
+      <p> Available: {{sea.monthN}} </p>
+      <p> Months: {{sea.monthArrayN}}</p>
+      <p> Time: {{sea.time}} </p>
+      <p> Speed: {{sea.speed}}</p>
+      <p> Shadow: {{sea.shadow}} </p>
+      {{greaterThanZeroSea sea.total_catch}}
+      <button class="seaDonateBtn donateButton" id="{{sea.id}}" data-name="{{sea.name}}">Donate</button>
+    </div>
+  </div>
+{{/each}}
+
+<script src="./js/sea.js"></script>
