@@ -115,6 +115,23 @@ input {
   background-color: var(--blue);
 }
 
+.donateButton {
+  width: 40%;
+  background-color: var(--blue);
+  color: var(--lightpink);
+  font-size: 1.5rem;
+  padding: 3% 5%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2% auto;
+}
+
+.donateButton:hover {
+  background-color: var(--darkpink);
+  color: var(--dark);
+}
+
 form {
   border-radius: 5px;
   width: 75%;

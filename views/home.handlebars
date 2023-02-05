@@ -13,7 +13,7 @@
       <p> Time: {{bug.time}} </p>
       <p> Location: {{bug.location}}</p>
       {{greaterThanZeroBug bug.total_catch}}
-      <button class="bugDonateBtn" id="{{bug.id}}" data-name="{{bug.name}}">Donate</button>
+      <button class="bugDonateBtn donateButton" id="{{bug.id}}" data-name="{{bug.name}}">Donate</button>
     </div>
   </div>
 {{/each}}
@@ -35,7 +35,7 @@
       {{greaterThanZeroFish fish.total_catch}}
       <p> Location: {{fish.location}}</p>
       <p> Shadow: {{fish.shadow}} </p>
-      <button class="fishDonateBtn" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
+      <button class="fishDonateBtn donateButton" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
     </div>
   </div>
 {{/each}}
@@ -55,7 +55,7 @@
       <p> Speed: {{sea.speed}}</p>
       <p> Shadow: {{sea.shadow}} </p>
       {{greaterThanZeroSea sea.total_catch}}
-      <button class="seaDonateBtn" id="{{sea.id}}" data-name="{{sea.name}}">Donate</button>
+      <button class="seaDonateBtn donateButton" id="{{sea.id}}" data-name="{{sea.name}}">Donate</button>
     </div>
   </div>
 {{/each}}
