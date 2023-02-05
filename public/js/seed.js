@@ -1,29 +1,40 @@
+const baseURL = "https://api.nookipedia.com/";
+
 const saveBugs = async () => {
-  var requestUrl = "https://acnhapi.com/v1a/bugs";
-  fetch(requestUrl)
+  var requestUrl = baseURL + "/nh/bugs";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
-        const id = data[i].id;
-        const name = data[i].name["name-USen"];
+        const id = data[i].number;
+        const name = data[i].name;
         const words = name.split(" ");
         const capitalName = words
           .map((word) => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].price;
-        const monthN = data[i].availability["month-northern"];
-        const monthS = data[i].availability["month-southern"];
-        const isAllDay = data[i].availability.isAllDay;
-        const isAllYear = data[i].availability.isAllYear;
-        const time = data[i].availability.time;
-        const location = data[i].availability.location;
-        const flickPrice = data[i]["price-flick"];
-        const image = data[i].image_uri;
-        const icon = data[i].icon_uri;
+        const sellPrice = data[i].sell_nook;
+        const monthN = data[i].n_availability;
+        const arrayN = data[i].n_availability_array;
+        const monthArrayN = arrayN.toString();
+        const monthS = data[i].s_availability;
+        const arrayS = data[i].s_availability_array;
+        const monthArrayS = arrayS.toString();
+        const time = data[i].time;
+        const location = data[i].location;
+        const flickPrice = data[i].sell_flick;
+        const icon = data[i].image_url;
+        const total_catch = data[i].total_catch;
 
         fetch("/api/bugs", {
           method: "POST",
@@ -32,14 +43,14 @@ const saveBugs = async () => {
             capitalName,
             sellPrice,
             monthN,
+            monthArrayN,
             monthS,
-            isAllDay,
-            isAllYear,
+            monthArrayS,
             time,
             location,
             flickPrice,
-            image,
             icon,
+            total_catch,
           }),
           headers: { "Content-Type": "application/json" },
         })
@@ -55,32 +66,41 @@ const saveBugs = async () => {
 };
 
 const saveFish = async () => {
-  var requestUrl = "https://acnhapi.com/v1a/fish";
-  fetch(requestUrl)
+  var requestUrl = baseURL + "/nh/fish";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
-        const id = data[i].id;
-        const name = data[i].name["name-USen"];
+        const id = data[i].number;
+        const name = data[i].name;
         const words = name.split(" ");
         const capitalName = words
           .map((word) => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].price;
-        const shadow = data[i].shadow;
-        const monthN = data[i].availability["month-northern"];
-        const monthS = data[i].availability["month-southern"];
-        const isAllDay = data[i].availability.isAllDay;
-        const isAllYear = data[i].availability.isAllYear;
-        const time = data[i].availability.time;
-        const location = data[i].availability.location;
-        const cjPrice = data[i]["price-cj"];
-        const image = data[i].image_uri;
-        const icon = data[i].icon_uri;
+        const sellPrice = data[i].sell_nook;
+        const shadow = data[i].shadow_size;
+        const monthN = data[i].n_availability;
+        const arrayN = data[i].n_availability_array;
+        const monthArrayN = arrayN.toString();
+        const monthS = data[i].s_availability;
+        const arrayS = data[i].s_availability_array;
+        const monthArrayS = arrayS.toString();
+        const time = data[i].time;
+        const location = data[i].location;
+        const cjPrice = data[i].sell_cj;
+        const icon = data[i].image_url;
+        const total_catch = data[i].total_catch;
 
         fetch("/api/fish", {
           method: "POST",
@@ -90,14 +110,14 @@ const saveFish = async () => {
             sellPrice,
             shadow,
             monthN,
+            monthArrayN,
             monthS,
-            isAllDay,
-            isAllYear,
+            monthArrayS,
             time,
             location,
             cjPrice,
-            image,
             icon,
+            total_catch,
           }),
           headers: { "Content-Type": "application/json" },
         })
@@ -113,31 +133,40 @@ const saveFish = async () => {
 };
 
 const saveSea = async () => {
-  var requestUrl = "https://acnhapi.com/v1a/sea";
-  fetch(requestUrl)
+  var requestUrl = baseURL + "/nh/sea";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
       for (var i = 0; i < data.length; i++) {
-        const id = data[i].id;
-        const name = data[i].name["name-USen"];
+        const id = data[i].number;
+        const name = data[i].name;
         const words = name.split(" ");
         const capitalName = words
           .map((word) => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].price;
-        const shadow = data[i].shadow;
-        const monthN = data[i].availability["month-northern"];
-        const monthS = data[i].availability["month-southern"];
-        const isAllDay = data[i].availability.isAllDay;
-        const isAllYear = data[i].availability.isAllYear;
-        const time = data[i].availability.time;
-        const speed = data[i].speed;
-        const image = data[i].image_uri;
-        const icon = data[i].icon_uri;
+        const sellPrice = data[i].sell_nook;
+        const shadow = data[i].shadow_size;
+        const monthN = data[i].n_availability;
+        const arrayN = data[i].n_availability_array;
+        const monthArrayN = arrayN.toString();
+        const monthS = data[i].s_availability;
+        const arrayS = data[i].s_availability_array;
+        const monthArrayS = arrayS.toString();
+        const time = data[i].time;
+        const speed = data[i].shadow_movement;
+        const icon = data[i].image_url;
+        const total_catch = data[i].total_catch;
 
         fetch("/api/sea", {
           method: "POST",
@@ -147,13 +176,13 @@ const saveSea = async () => {
             sellPrice,
             shadow,
             monthN,
+            monthArrayN,
             monthS,
-            isAllDay,
-            isAllYear,
+            monthArrayS,
             time,
             speed,
-            image,
             icon,
+            total_catch,
           }),
           headers: { "Content-Type": "application/json" },
         })

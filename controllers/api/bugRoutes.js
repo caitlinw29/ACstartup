@@ -10,14 +10,14 @@ router.post("/", async (req, res) => {
       name: req.body.capitalName,
       sellPrice: req.body.sellPrice,
       monthN: req.body.monthN,
+      monthArrayN: req.body.monthArrayN,
       monthS: req.body.monthS,
-      isAllDay: req.body.isAllDay,
-      isAllYear: req.body.isAllYear,
+      monthArrayS: req.body.monthArrayS,
       time: req.body.time,
       location: req.body.location,
       flickPrice: req.body.flickPrice,
-      image: req.body.image,
       icon: req.body.icon,
+      total_catch: req.body.total_catch,
     });
 
     res.status(200).json(newBug);

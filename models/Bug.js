@@ -20,21 +20,20 @@ Bug.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    flickPrice: {
+      type: DataTypes.INTEGER,
+    },
     monthN: {
       type: DataTypes.STRING,
-      allowNull: false,
+    },
+    monthArrayN: {
+      type: DataTypes.STRING,
     },
     monthS: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
-    isAllDay: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    isAllYear: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    monthArrayS: {
+      type: DataTypes.STRING,
     },
     time: {
       type: DataTypes.STRING,
@@ -42,14 +41,11 @@ Bug.init(
     location: {
       type: DataTypes.STRING,
     },
-    flickPrice: {
-      type: DataTypes.INTEGER,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
     icon: {
       type: DataTypes.STRING,
+    },
+    total_catch: {
+      type: DataTypes.INTEGER,
     },
   },
   {

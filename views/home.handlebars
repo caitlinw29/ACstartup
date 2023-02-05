@@ -8,18 +8,11 @@
     <div class="card-contents">
       <p> Sell price: {{bug.sellPrice}} bells </p>
       <p> Flick price: {{bug.flickPrice}} bells </p>
-      {{#if isAllYear}}
-      <p> Available: All Year </p>
-      {{else}}
       <p> Available: {{bug.monthN}} </p>
-      {{/if}}
-
-      {{#if isAllDay}}
-      <p> Time: All Day</p>
-      {{else}}
+      <p> Months: {{bug.monthArrayN}}</p>
       <p> Time: {{bug.time}} </p>
-      {{/if}}
       <p> Location: {{bug.location}}</p>
+      {{greaterThanZeroBug bug.total_catch}}
       <button class="bugDonateBtn" id="{{bug.id}}" data-name="{{bug.name}}">Donate</button>
     </div>
   </div>
@@ -35,17 +28,11 @@
     <div class="card-contents">
       <p> Sell price: {{fish.sellPrice}} bells </p>
       <p> CJ price: {{fish.cjPrice}} bells </p>
-      {{#if isAllYear}}
-      <p> Available: All Year </p>
-      {{else}}
       <p> Available: {{fish.monthN}} </p>
-      {{/if}}
-
-      {{#if isAllDay}}
-      <p> Time: All Day</p>
-      {{else}}
+      <p> Months: {{fish.monthArrayN}}</p>
       <p> Time: {{fish.time}} </p>
-      {{/if}}
+      {{Char-ChSalmon fish.name}}
+      {{greaterThanZeroFish fish.total_catch}}
       <p> Location: {{fish.location}}</p>
       <p> Shadow: {{fish.shadow}} </p>
       <button class="fishDonateBtn" id="{{fish.id}}" data-name="{{fish.name}}">Donate</button>
@@ -62,19 +49,12 @@
 
     <div class="card-contents">
       <p> Sell price: {{sea.sellPrice}} bells </p>
-      {{#if isAllYear}}
-      <p> Available: All Year </p>
-      {{else}}
       <p> Available: {{sea.monthN}} </p>
-      {{/if}}
-
-      {{#if isAllDay}}
-      <p> Time: All Day</p>
-      {{else}}
+      <p> Months: {{sea.monthArrayN}}</p>
       <p> Time: {{sea.time}} </p>
-      {{/if}}
       <p> Speed: {{sea.speed}}</p>
       <p> Shadow: {{sea.shadow}} </p>
+      {{greaterThanZeroSea sea.total_catch}}
       <button class="seaDonateBtn" id="{{sea.id}}" data-name="{{sea.name}}">Donate</button>
     </div>
   </div>

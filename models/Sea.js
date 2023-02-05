@@ -24,17 +24,15 @@ Sea.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    monthArrayN: {
+      type: DataTypes.STRING,
+    },
     monthS: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    isAllDay: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    isAllYear: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    monthArrayS: {
+      type: DataTypes.STRING,
     },
     time: {
       type: DataTypes.STRING,
@@ -45,11 +43,11 @@ Sea.init(
     speed: {
       type: DataTypes.STRING,
     },
-    image: {
-      type: DataTypes.STRING,
-    },
     icon: {
       type: DataTypes.STRING,
+    },
+    total_catch: {
+      type: DataTypes.INTEGER,
     },
   },
   {

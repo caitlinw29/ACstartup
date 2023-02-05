@@ -11,12 +11,12 @@ router.post("/", async (req, res) => {
       shadow: req.body.shadow,
       speed: req.body.speed,
       monthN: req.body.monthN,
+      monthArrayN: req.body.monthArrayN,
       monthS: req.body.monthS,
-      isAllDay: req.body.isAllDay,
-      isAllYear: req.body.isAllYear,
+      monthArrayS: req.body.monthArrayS,
       time: req.body.time,
-      image: req.body.image,
       icon: req.body.icon,
+      total_catch: req.body.total_catch,
     });
 
     res.status(200).json(newSea);

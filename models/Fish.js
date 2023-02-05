@@ -20,6 +20,9 @@ Fish.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    cjPrice: {
+      type: DataTypes.INTEGER,
+    },
     shadow: {
       type: DataTypes.STRING,
     },
@@ -27,17 +30,15 @@ Fish.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    monthArrayN: {
+      type: DataTypes.STRING,
+    },
     monthS: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    isAllDay: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    isAllYear: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
+    monthArrayS: {
+      type: DataTypes.STRING,
     },
     time: {
       type: DataTypes.STRING,
@@ -45,14 +46,11 @@ Fish.init(
     location: {
       type: DataTypes.STRING,
     },
-    cjPrice: {
-      type: DataTypes.INTEGER,
-    },
-    image: {
-      type: DataTypes.STRING,
-    },
     icon: {
       type: DataTypes.STRING,
+    },
+    total_catch: {
+      type: DataTypes.INTEGER,
     },
   },
   {
