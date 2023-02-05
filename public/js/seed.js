@@ -1,4 +1,7 @@
 const baseURL = "https://api.nookipedia.com/";
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 
 const saveBugs = async () => {
   var requestUrl = baseURL + "/nh/bugs";
@@ -23,7 +26,8 @@ const saveBugs = async () => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].sell_nook;
+        const sellPriceNum = data[i].sell_nook;
+        const sellPriceString = numberWithCommas(sellPriceNum);
         const monthN = data[i].n_availability;
         const arrayN = data[i].n_availability_array;
         const monthArrayN = arrayN.toString();
@@ -32,7 +36,8 @@ const saveBugs = async () => {
         const monthArrayS = arrayS.toString();
         const time = data[i].time;
         const location = data[i].location;
-        const flickPrice = data[i].sell_flick;
+        const flickPriceNum = data[i].sell_flick;
+        const flickPriceString = numberWithCommas(flickPriceNum);
         const icon = data[i].image_url;
         const total_catch = data[i].total_catch;
 
@@ -41,14 +46,16 @@ const saveBugs = async () => {
           body: JSON.stringify({
             id,
             capitalName,
-            sellPrice,
+            sellPriceNum,
+            sellPriceString,
             monthN,
             monthArrayN,
             monthS,
             monthArrayS,
             time,
             location,
-            flickPrice,
+            flickPriceNum,
+            flickPriceString,
             icon,
             total_catch,
           }),
@@ -88,7 +95,8 @@ const saveFish = async () => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].sell_nook;
+        const sellPriceNum = data[i].sell_nook;
+        const sellPriceString = numberWithCommas(sellPriceNum);
         const shadow = data[i].shadow_size;
         const monthN = data[i].n_availability;
         const arrayN = data[i].n_availability_array;
@@ -98,7 +106,8 @@ const saveFish = async () => {
         const monthArrayS = arrayS.toString();
         const time = data[i].time;
         const location = data[i].location;
-        const cjPrice = data[i].sell_cj;
+        const cjPriceNum = data[i].sell_cj;
+        const cjPriceString = numberWithCommas(cjPriceNum);
         const icon = data[i].image_url;
         const total_catch = data[i].total_catch;
 
@@ -107,7 +116,8 @@ const saveFish = async () => {
           body: JSON.stringify({
             id,
             capitalName,
-            sellPrice,
+            sellPriceNum,
+            sellPriceString,
             shadow,
             monthN,
             monthArrayN,
@@ -115,7 +125,8 @@ const saveFish = async () => {
             monthArrayS,
             time,
             location,
-            cjPrice,
+            cjPriceNum,
+            cjPriceString,
             icon,
             total_catch,
           }),
@@ -155,7 +166,8 @@ const saveSea = async () => {
             return word[0].toUpperCase() + word.substring(1);
           })
           .join(" ");
-        const sellPrice = data[i].sell_nook;
+        const sellPriceNum = data[i].sell_nook;
+        const sellPriceString = numberWithCommas(sellPriceNum);
         const shadow = data[i].shadow_size;
         const monthN = data[i].n_availability;
         const arrayN = data[i].n_availability_array;
@@ -173,7 +185,8 @@ const saveSea = async () => {
           body: JSON.stringify({
             id,
             capitalName,
-            sellPrice,
+            sellPriceNum,
+            sellPriceString,
             shadow,
             monthN,
             monthArrayN,

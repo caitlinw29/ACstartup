@@ -7,7 +7,8 @@ router.post("/", async (req, res) => {
     const newSea = await Sea.create({
       id: req.body.id,
       name: req.body.capitalName,
-      sellPrice: req.body.sellPrice,
+      sellPriceNum: req.body.sellPriceNum,
+      sellPriceString: req.body.sellPriceString,
       shadow: req.body.shadow,
       speed: req.body.speed,
       monthN: req.body.monthN,

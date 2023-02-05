@@ -8,14 +8,16 @@ router.post("/", async (req, res) => {
     const newBug = await Bug.create({
       id: req.body.id,
       name: req.body.capitalName,
-      sellPrice: req.body.sellPrice,
+      sellPriceNum: req.body.sellPriceNum,
+      sellPriceString: req.body.sellPriceString,
       monthN: req.body.monthN,
       monthArrayN: req.body.monthArrayN,
       monthS: req.body.monthS,
       monthArrayS: req.body.monthArrayS,
       time: req.body.time,
       location: req.body.location,
-      flickPrice: req.body.flickPrice,
+      flickPriceNum: req.body.flickPriceNum,
+      flickPriceString: req.body.flickPriceString,
       icon: req.body.icon,
       total_catch: req.body.total_catch,
     });

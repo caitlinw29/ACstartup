@@ -16,9 +16,11 @@ Sea.init(
       allowNull: false,
       unique: true,
     },
-    sellPrice: {
+    sellPriceNum: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+    },
+    sellPriceString: {
+      type: DataTypes.STRING,
     },
     monthN: {
       type: DataTypes.STRING,

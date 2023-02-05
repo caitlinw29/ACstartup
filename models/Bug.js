@@ -16,12 +16,18 @@ Bug.init(
       allowNull: false,
       unique: true,
     },
-    sellPrice: {
+    sellPriceNum: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    flickPrice: {
+    sellPriceString: {
+      type: DataTypes.STRING,
+    },
+    flickPriceNum: {
       type: DataTypes.INTEGER,
+    },
+    flickPriceString: {
+      type: DataTypes.STRING,
     },
     monthN: {
       type: DataTypes.STRING,

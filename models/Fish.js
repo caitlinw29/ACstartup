@@ -16,12 +16,17 @@ Fish.init(
       allowNull: false,
       unique: true,
     },
-    sellPrice: {
+    sellPriceNum: {
       type: DataTypes.INTEGER,
-      allowNull: false,
     },
-    cjPrice: {
+    sellPriceString: {
+      type: DataTypes.STRING,
+    },
+    cjPriceNum: {
       type: DataTypes.INTEGER,
+    },
+    cjPriceString: {
+      type: DataTypes.STRING,
     },
     shadow: {
       type: DataTypes.STRING,
