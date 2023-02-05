@@ -11,6 +11,22 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
+hbs.handlebars.registerHelper('greaterThanZeroFish', function (number) {
+  if (number > 0) return new hbs.handlebars.SafeString("<p> Note: You need to catch " + number + " fish before this fish will spawn.</p>");
+});
+
+hbs.handlebars.registerHelper('greaterThanZeroBug', function (number) {
+  if (number > 0) return new hbs.handlebars.SafeString("<p> Note: You need to catch " + number + " bugs before this bug will spawn.</p>");
+});
+
+hbs.handlebars.registerHelper('greaterThanZeroSea', function (number) {
+  if (number > 0) return new hbs.handlebars.SafeString("<p> Note: You need to catch " + number + " sea creatures before this creature will spawn.</p>");
+});
+
+hbs.handlebars.registerHelper('Char-ChSalmon', function (name) {
+  if (name === "Char" || name === "Cherry Salmon") return new hbs.handlebars.SafeString("<p>Note: This fish is available from 4pm-9am in its spring/summer months but all day in its fall/winter months.</p>");
+});
+
 const sess = {
   secret: "secret",
   cookie: {},
