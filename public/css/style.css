@@ -4,36 +4,31 @@
   --darkpink: #dbb4ad;
   --green: #a2ad91;
   --dark: #3a2d32;
-  --background: ;
-  --text: ;
-  --accent1: ;
-  --accent2: ;
-  --accent3: ;
+  --plum: #f7aef8;
+  --lavender: #b388eb;
+  --black: #070707;
+  --sky: #72ddf7;
+  --white: #f4f4ed;
 }
 
+/* GENERAL */
+
 body {
-  background-color: var(--green);
+  background-color: var(--black);
   font-family: "Tahoma", sans-serif;
-  color: var(--dark);
-  margin-bottom: 10%;
+  color: var(--white);
 }
 
 a {
-  color: var(--blue);
+  color: var(--lightpink);
 }
 
 a:hover {
-  color: var(--darkpink);
+  color: var(--white);
   text-decoration: none;
 }
 
-.margin-small {
-  margin: 1%;
-}
-
-.margin-right {
-  margin-right: 15%;
-}
+/* NAV */
 
 .nav {
   display: flex;
@@ -52,9 +47,10 @@ a:hover {
   flex: 1;
 }
 
-.nav-ul li a {
+.nav-ul li a,
+#homeIcon {
   display: block;
-  color: var(--dark);
+  color: var(--lightpink);
   text-align: center;
   padding: 20px;
   text-decoration: none;
@@ -66,8 +62,15 @@ a:hover {
   text-decoration: none;
 }
 
+#homeIcon ion-icon {
+  height: 2rem;
+  width: 2rem;
+}
+
+/* PHOTO GALLERY */
+
 .gallery {
-  background: var(--dark);
+  background: var(--black);
   margin-bottom: 7%;
 }
 
@@ -89,7 +92,9 @@ a:hover {
   background: url("/img/logo2.png");
 }
 
-input {
+/* FORMS */
+
+.form input {
   width: 75%;
   padding: 10px;
   display: block;
@@ -100,10 +105,10 @@ input {
   box-sizing: border-box;
 }
 
-.button {
+.form button {
   width: 40%;
-  background-color: var(--dark);
-  color: var(--lightpink);
+  background-color: var(--black);
+  color: var(--green);
   font-size: 1.5rem;
   padding: 3% 5%;
   border: none;
@@ -112,30 +117,9 @@ input {
   margin: 2% auto;
 }
 
-.button:hover {
-  background-color: var(--blue);
-}
-
-.donateButton {
-  width: 40%;
-  background-color: var(--blue);
-  color: var(--lightpink);
-  font-size: 1.5rem;
-  padding: 3% 5%;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 2% auto;
-}
-
-.donateButton:hover {
-  background-color: var(--darkpink);
-  color: var(--dark);
-}
-
-.dropbtn {
-  width: 60%;
-  height: 3rem;
+.form button:hover {
+  background-color: var(--sky);
+  color: var(--black);
 }
 
 form {
@@ -145,16 +129,19 @@ form {
 }
 
 .form {
-  background: var(--lightpink);
-  margin: 0 10%;
+  background: var(--green);
+  color: var(--black);
+  margin: 5% 10% 0;
   padding: 5%;
   border-radius: 100px;
 }
 
+/* FEATURES GRID*/
+
 hr {
   width: 33%;
   height: 3px;
-  background-color: var(--dark);
+  background-color: var(--sky);
   border: 0;
   margin-bottom: 5%;
 }
@@ -182,7 +169,7 @@ hr {
 }
 
 .grid li ion-icon {
-  color: var(--blue);
+  color: var(--sky);
   font-size: 4rem;
 }
 
@@ -191,14 +178,14 @@ hr {
   margin: 25px 0;
 }
 
-/*Footer Section*/
+/* FOOTER */
 
 footer {
   display: flex;
   flex-direction: column;
-  background-color: var(--dark);
-  color: var(--lightpink);
-  padding: 20px;
+  background-color: var(--black);
+  color: var(--sky);
+  padding: 0 5%;
   text-align: center;
 }
 
@@ -209,7 +196,10 @@ footer ul {
 footer ul li {
   list-style-type: none;
   font-size: 1.5rem;
+  padding: 0.5%;
 }
+
+/* ABOUT PAGE */
 
 #about-ul {
   display: flex;
@@ -230,85 +220,57 @@ footer ul li {
 
 #faq-ul li {
   background: var(--blue);
-  color: var(--lightpink);
+  color: var(--white);
   margin: 5% 0;
   padding: 2%;
   border-radius: 15px;
 }
 
 #faq-ul li:nth-child(odd) {
-  background: var(--lightpink);
-  color: var(--dark);
+  background: var(--white);
+  color: var(--black);
 }
 
 #tutorial-button {
   width: 66%;
-  background: var(--dark);
-  color: var(--lightpink);
+  background: var(--sky);
+  color: var(--black);
+  font-size: 1.5rem;
+  padding: 3% 5%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2% auto;
 }
 
 #tutorial-button:hover {
   background: var(--blue);
 }
 
-#contact-form {
-  margin: 5%;
-}
+/* IMAGES */
 
 .creature-img {
-  height: 15%;
-  width: 15%;
-  max-height: 115px;
-  max-width: 115px;
+  height: 100px;
+  width: 100px;
 }
 
-/* Fixed buttons on bottom of screen*/
-#collectionBtns {
-  position: fixed;
-  height: 30%;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--darkpink);
-  padding-top: 1%;
+/* BUTTONS */
+
+.donateButton {
+  width: 40%;
+  background-color: var(--black);
+  color: var(--sky);
+  font-size: 1.5rem;
+  padding: 3% 5%;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2% auto;
 }
 
-/* The container for dropdown button*/
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 32%;
-  text-align: center;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  bottom: 100%;
-  right: 25%;
-  width: 50%;
-  background-color: var(--lightpink);
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: var(--dark);
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: var(--darkpink);
-}
-
-/* Show the dropdown menu */
-.show {
-  display: block;
+.donateButton:hover {
+  background-color: var(--sky);
+  color: var(--black);
 }
 
 @media (max-width: 800px) {
@@ -320,24 +282,11 @@ footer ul li {
   footer {
     font-size: 10px;
   }
-
-  #collectionBtns {
-    height: 20%;
-  }
-
-  .dropbtn {
-    height: 2rem;
-    line-height: 0;
-  }
 }
 
 @media screen and (max-width: 500px) {
   .form {
     margin-top: 15%;
     border-radius: 50px;
-  }
-
-  #collectionBtns {
-    height: 15%;
   }
 }
