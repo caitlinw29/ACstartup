@@ -265,10 +265,11 @@ footer ul li {
 }
 
 .sidebar-icon {
-  height: 7.8%;
+  height: 7.75%;
   width: 50%;
   color: var(--green);
   display: inline-block;
+  transition: 0.3s;
 }
 
 .secondary {
@@ -319,14 +320,38 @@ footer ul li {
   position: fixed;
   height: 100%;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
   text-align: center;
 }
 
 section#content {
   padding: 1%;
   height: 100vh;
-  transition: margin-left 0.5s;
+  transition: margin-left 0.3s;
+}
+
+.sidepanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: var(--black);
+  overflow-x: hidden;
+  padding-top: 60px;
+}
+
+.sidepanel a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: var(--green);
+  display: block;
+}
+
+.sidepanel a:hover {
+  color: var(--white);
 }
 
 @media (max-width: 800px) {
