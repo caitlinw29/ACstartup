@@ -50,65 +50,66 @@
           </div>
         </div>
         
-        <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+        {{!-- <div class="contentArea">
+          <div class="dropdown-content">
             <a href="/bug">Bugs</a>
             <a href="/fish">Fish</a>
             <a href="/sea">Sea Creatures</a>
-          </div> --}}
+          </div>
         </div>
 
         <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/">Furniture</a>
             <a href="/">Songs</a>
             <a href="/">Walls</a>
-          </div> --}}
+          </div>
         </div>
 
         <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/">Reactions</a>
             <a href="/">Posters</a>
             <a href="/">Photos</a>
-          </div> --}}
+          </div>
         </div>
 
         <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/">All</a>
             <a href="/">Crafting</a>
             <a href="/">Cooking</a>
-          </div> --}}
+          </div>
         </div>
 
         <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/">All</a>
             <a href="/">Anytime</a>
             <a href="/">Date-locked/Event</a>
-          </div> --}}
+          </div>
         </div>
 
         <div class="contentArea">
-          {{!-- <div class="dropdown-content">
+          <div class="dropdown-content">
             <a href="/">Flowers</a>
             <a href="/">Misc.</a>
             <a href="/">Gyroids</a>
-          </div> --}}
-        </div>
+          </div>
+        </div> --}}
       </section>
       
       <!-- Render the sub layout -->
-      <section class="content">
-      <a href="/" id="log-out"> Log out</a>
+      <section id="content">
+        <ion-icon name="menu" id="menu-icon"></ion-icon>
+        <a href="/" id="log-out"> Log out</a>
      {{/if}}
       {{{ body }}}
       </section>
     </main>
 
     {{#if logged_in}}
-    <script src="/js/collectionBtn.js"></script>
+    <script src="/js/side-nav.js"></script>
     <script src="/js/logout.js"></script>
     {{/if}}
     <!-- Top 2 scripts for icons, third script for gallery -->

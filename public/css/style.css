@@ -9,9 +9,15 @@
   --black: #070707;
   --sky: #72ddf7;
   --white: #f4f4ed;
+  --gray: #3a3d45;
 }
 
 /* GENERAL */
+html,
+body {
+  overscroll-behavior-x: none; //removes page change on swipe of fingers
+  height: 100%;
+}
 
 body {
   background-color: var(--black);
@@ -255,18 +261,30 @@ footer ul li {
 }
 
 .sidebar-icon {
-  width: 36px;
-  height: 36px;
+  width: 2.5rem;
+  height: 2.5rem;
   color: var(--green);
-  padding: 10%;
+  padding: 20%;
   display: block;
 }
 
 .secondary {
   color: var(--white);
+  width: 2rem;
+  height: 2rem;
 }
 
-.sidebar-icon:hover{
+.sidebar-icon:hover {
+  cursor: pointer;
+}
+
+#menu-icon {
+  width: 2rem;
+  height: 2rem;
+  color: var(--white);
+}
+
+#menu-icon:hover {
   cursor: pointer;
 }
 
@@ -294,25 +312,27 @@ footer ul li {
 #sidebar {
   margin: 0;
   padding: 0;
-  width: 100px;
-  background-color: var(--black);
+  width: 0;
+  background-color: var(--gray);
   position: fixed;
   height: 100%;
-  overflow: auto;
+  overflow-x: hidden;
+  transition: 0.5s;
 }
 
-section.content {
-  margin-left: 100px;
-  padding: 1px 16px;
-  height: 100%;
+section#content {
+  padding: 1%;
+  height: 100vh;
+  transition: margin-left 0.5s;
 }
 
 #flex-side {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 0 0 50px;
-  height: 100vh;
+  align-items: center;
+  height: 100%;
+  padding: 5% 0;
 }
 
 @media (max-width: 800px) {
@@ -332,11 +352,15 @@ section.content {
     border-radius: 50px;
   }
 
-  #sidebar {
-    width: 50px;
+  #menu-icon {
+    display: none;
   }
 
-  section.content {
-    margin-left: 50px;
+  section#content {
+    padding: 5%;
+  }
+
+  #flex-side {
+    padding: 5% 12% 5% 0;
   }
 }
