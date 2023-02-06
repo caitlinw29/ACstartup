@@ -12,81 +12,99 @@
   </head>
 
   <body>
+    {{#if logged_in}}
+    {{else}}
     <nav class="nav m-1">
       <a href="/" class="mr-5" id="homeIcon"><ion-icon name="home"></ion-icon></a>
 
       <ul class="nav-ul">
-        {{#if logged_in}}
-        <li><a href="/" id="log-out"> Log out</a></li>
-          {{else}}
-          <li><a href="/login"><ion-icon name="person"></ion-icon> <br/>Login</a></li>
-          <li><a href="/signup"><ion-icon name="create"></ion-icon> <br/>Signup</a></li>
-          <li><a href="/about"><ion-icon name="information-circle"></ion-icon> <br/>About</a></li>
-        {{/if}}
+        <li><a href="/login"><ion-icon name="person"></ion-icon> <br/>Login</a></li>
+        <li><a href="/signup"><ion-icon name="create"></ion-icon> <br/>Signup</a></li>
+        <li><a href="/about"><ion-icon name="information-circle"></ion-icon> <br/>About</a></li>
       </ul>
-
     </nav>
+    {{/if}}
 
     <main>
       {{#if logged_in}}
-      <section id="collectionBtns">
-        <div class="dropdown">
-          <button class="button dropbtn">Museum</button>
-          <div class="dropdown-content">
+      <section id="sidebar">
+        <div id="flex-side">
+          <div>
+            <a href="/home"><ion-icon name="home" class="sidebar-icon secondary"></ion-icon></a>
+            <ion-icon name="search" class="sidebar-icon secondary"></ion-icon>
+          </div>
+          <div>
+            <ion-icon name="fish" class="sidebar-icon"></ion-icon>
+            <ion-icon name="cart" class="sidebar-icon"></ion-icon>
+            <ion-icon name="construct" class="sidebar-icon"></ion-icon>
+            <ion-icon name="ribbon" class="sidebar-icon"></ion-icon>
+            <ion-icon name="paw" class="sidebar-icon"></ion-icon>
+            <ion-icon name="leaf" class="sidebar-icon"></ion-icon>
+          </div>
+          <div>
+            <ion-icon name="time" class="sidebar-icon secondary"></ion-icon>
+            <a href="/"><ion-icon name="map" class="sidebar-icon secondary"></ion-icon></a> 
+            <ion-icon name="cog" class="sidebar-icon secondary"></ion-icon>
+            {{!-- This will be removed and an acnh character will be added --}}
+            <ion-icon name="person" class="sidebar-icon secondary"></ion-icon>
+          </div>
+        </div>
+        
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/bug">Bugs</a>
             <a href="/fish">Fish</a>
             <a href="/sea">Sea Creatures</a>
-          </div>
+          </div> --}}
         </div>
 
-        <div class="dropdown">
-          <button class="button dropbtn">Catalog</button>
-          <div class="dropdown-content">
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/">Furniture</a>
             <a href="/">Songs</a>
             <a href="/">Walls</a>
-          </div>
+          </div> --}}
         </div>
 
-        <div class="dropdown">
-          <button class="button dropbtn">Villagers</button>
-          <div class="dropdown-content">
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/">Reactions</a>
             <a href="/">Posters</a>
             <a href="/">Photos</a>
-          </div>
+          </div> --}}
         </div>
 
-        <div class="dropdown">
-          <button class="button dropbtn">DIYS</button>
-          <div class="dropdown-content">
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/">All</a>
             <a href="/">Crafting</a>
             <a href="/">Cooking</a>
-          </div>
+          </div> --}}
         </div>
 
-        <div class="dropdown">
-          <button class="button dropbtn">Achievements</button>
-          <div class="dropdown-content">
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/">All</a>
             <a href="/">Anytime</a>
             <a href="/">Date-locked/Event</a>
-          </div>
+          </div> --}}
         </div>
 
-        <div class="dropdown">
-          <button class="button dropbtn">Nature</button>
-          <div class="dropdown-content">
+        <div class="contentArea">
+          {{!-- <div class="dropdown-content">
             <a href="/">Flowers</a>
             <a href="/">Misc.</a>
             <a href="/">Gyroids</a>
-          </div>
+          </div> --}}
         </div>
       </section>
-      {{/if}}
+      
       <!-- Render the sub layout -->
+      <section class="content">
+      <a href="/" id="log-out"> Log out</a>
+     {{/if}}
       {{{ body }}}
+      </section>
     </main>
 
     {{#if logged_in}}

@@ -81,7 +81,7 @@ a:hover {
 }
 
 #gallery1 {
-  background: url("/img/logo.png");
+  background: url("/img/favicon.png");
 }
 
 #gallery2 {
@@ -89,7 +89,7 @@ a:hover {
 }
 
 #gallery3 {
-  background: url("/img/logo2.png");
+  background: url("/img/favicon.png");
 }
 
 /* FORMS */
@@ -254,6 +254,22 @@ footer ul li {
   width: 100px;
 }
 
+.sidebar-icon {
+  width: 36px;
+  height: 36px;
+  color: var(--green);
+  padding: 10%;
+  display: block;
+}
+
+.secondary {
+  color: var(--white);
+}
+
+.sidebar-icon:hover{
+  cursor: pointer;
+}
+
 /* BUTTONS */
 
 .donateButton {
@@ -273,6 +289,32 @@ footer ul li {
   color: var(--black);
 }
 
+/* SIDE NAV */
+
+#sidebar {
+  margin: 0;
+  padding: 0;
+  width: 100px;
+  background-color: var(--black);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+section.content {
+  margin-left: 100px;
+  padding: 1px 16px;
+  height: 100%;
+}
+
+#flex-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 50px;
+  height: 100vh;
+}
+
 @media (max-width: 800px) {
   .grid li {
     flex-basis: 100%;
@@ -288,5 +330,13 @@ footer ul li {
   .form {
     margin-top: 15%;
     border-radius: 50px;
+  }
+
+  #sidebar {
+    width: 50px;
+  }
+
+  section.content {
+    margin-left: 50px;
   }
 }
