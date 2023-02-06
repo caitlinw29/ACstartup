@@ -125,3 +125,10 @@ function moveTouch(e) {
 
   e.preventDefault();
 }
+
+
+
+//when user clicks home button, redirect to home
+document.querySelector("#homeNav").addEventListener("click", function(){
+  document.location.replace("/home");
+})

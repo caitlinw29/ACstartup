@@ -25,6 +25,10 @@ body {
   color: var(--white);
 }
 
+main {
+  height: 100%;
+}
+
 a {
   color: var(--lightpink);
 }
@@ -261,21 +265,19 @@ footer ul li {
 }
 
 .sidebar-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  height: 7.8%;
+  width: 50%;
   color: var(--green);
-  padding: 20%;
-  display: block;
+  display: inline-block;
 }
 
 .secondary {
   color: var(--white);
-  width: 2rem;
-  height: 2rem;
 }
 
 .sidebar-icon:hover {
   cursor: pointer;
+  color: var(--sky);
 }
 
 #menu-icon {
@@ -311,28 +313,20 @@ footer ul li {
 
 #sidebar {
   margin: 0;
-  padding: 0;
+  padding: 1% 0;
   width: 0;
   background-color: var(--gray);
   position: fixed;
   height: 100%;
   overflow-x: hidden;
   transition: 0.5s;
+  text-align: center;
 }
 
 section#content {
   padding: 1%;
   height: 100vh;
   transition: margin-left 0.5s;
-}
-
-#flex-side {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  padding: 5% 0;
 }
 
 @media (max-width: 800px) {
@@ -358,9 +352,5 @@ section#content {
 
   section#content {
     padding: 5%;
-  }
-
-  #flex-side {
-    padding: 5% 12% 5% 0;
   }
 }

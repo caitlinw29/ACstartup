@@ -28,27 +28,21 @@
     <main>
       {{#if logged_in}}
       <section id="sidebar">
-        <div id="flex-side">
-          <div>
-            <a href="/home"><ion-icon name="home" class="sidebar-icon secondary"></ion-icon></a>
-            <ion-icon name="search" class="sidebar-icon secondary"></ion-icon>
-          </div>
-          <div>
-            <ion-icon name="fish" class="sidebar-icon"></ion-icon>
-            <ion-icon name="cart" class="sidebar-icon"></ion-icon>
-            <ion-icon name="construct" class="sidebar-icon"></ion-icon>
-            <ion-icon name="ribbon" class="sidebar-icon"></ion-icon>
-            <ion-icon name="paw" class="sidebar-icon"></ion-icon>
-            <ion-icon name="leaf" class="sidebar-icon"></ion-icon>
-          </div>
-          <div>
-            <ion-icon name="time" class="sidebar-icon secondary"></ion-icon>
-            <a href="/"><ion-icon name="map" class="sidebar-icon secondary"></ion-icon></a> 
-            <ion-icon name="cog" class="sidebar-icon secondary"></ion-icon>
-            {{!-- This will be removed and an acnh character will be added --}}
-            <ion-icon name="person" class="sidebar-icon secondary"></ion-icon>
-          </div>
-        </div>
+        <ion-icon name="home" class="sidebar-icon secondary" id="homeNav"></ion-icon>
+        <ion-icon name="search" class="sidebar-icon secondary"></ion-icon>
+        <ion-icon name="fish" class="sidebar-icon"></ion-icon>
+        <ion-icon name="cart" class="sidebar-icon"></ion-icon>
+        <ion-icon name="construct" class="sidebar-icon"></ion-icon>
+        <ion-icon name="ribbon" class="sidebar-icon"></ion-icon>
+        <ion-icon name="paw" class="sidebar-icon"></ion-icon>
+        <ion-icon name="leaf" class="sidebar-icon"></ion-icon>
+        <ion-icon name="time" class="sidebar-icon secondary"></ion-icon>
+        {{!-- Add a direct link on click to map/chart--}}
+        <ion-icon name="map" class="sidebar-icon secondary"></ion-icon>
+        <ion-icon name="cog" class="sidebar-icon secondary"></ion-icon>
+        {{!-- This will be removed and an acnh character will be added --}}
+        <ion-icon name="person" class="sidebar-icon secondary"></ion-icon>
+  
         
         {{!-- <div class="contentArea">
           <div class="dropdown-content">
