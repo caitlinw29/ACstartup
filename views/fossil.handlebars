@@ -1,0 +1,15 @@
+{{#each fossil as |fossil| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <img class="creature-img" src="{{fossil.icon}}" alt="{{fossil.name}}"/>
+      <h2> {{fossil.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p> Sell price: {{fossil.sellPriceString}} bells </p>
+      <button class="fossilDonateBtn donateButton" id="{{fossil.id}}" data-name="{{fossil.name}}">Donate</button>
+    </div>
+  </div>
+{{/each}}
+
+<script src="./js/fossil.js"></script>

@@ -210,11 +210,60 @@ const saveSea = async () => {
     });
 };
 
-document.querySelector("#seedBtn").addEventListener("click", function () {
-  saveBugs();
-  saveFish();
-  saveSea();
-});
+const saveFossil = async () => {
+  var requestUrl = baseURL + "/nh/fossils/individuals";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (var i = 0; i < data.length; i++) {
+        const name = data[i].name;
+        const words = name.split(" ");
+        const capitalName = words
+          .map((word) => {
+            return word[0].toUpperCase() + word.substring(1);
+          })
+          .join(" ");
+        const sellPriceNum = data[i].sell;
+        const sellPriceString = numberWithCommas(sellPriceNum);
+        const icon = data[i].image_url;
+
+        fetch("/api/fossil", {
+          method: "POST",
+          body: JSON.stringify({
+            capitalName,
+            sellPriceNum,
+            sellPriceString,
+            icon,
+          }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+};
+
+document.querySelector("#seedBtnBug").addEventListener("click", saveBugs);
+
+document.querySelector("#seedBtnFish").addEventListener("click", saveFish);
+
+document.querySelector("#seedBtnSea").addEventListener("click", saveSea);
+
+document.querySelector("#seedBtnFossil").addEventListener("click", saveFossil);
 
 document.querySelector("#homeBtn").addEventListener("click", function () {
   document.location.replace("/home");

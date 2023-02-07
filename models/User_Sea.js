@@ -27,10 +27,6 @@ User_Sea.init(
     },
     seaName: {
       type: DataTypes.STRING,
-      references: {
-        model: "sea",
-        key: "name",
-      },
     },
     isDonated: {
       type: DataTypes.BOOLEAN,

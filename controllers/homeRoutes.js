@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Bug, Fish, Sea } = require("../models");
+const { User, Bug, Fish, Sea, Fossil } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
@@ -58,7 +58,7 @@ router.get("/about", async (req, res) => {
 router.get("/home", withAuth, async (req, res) => {
   try {
     //checks if data already exists (first user seeds database)
-    const bugData = await Bug.findOne({ where: { name: 'Common Butterfly' } });
+    const bugData = await Bug.findOne({ where: { name: "Common Butterfly" } });
     if (bugData === null) {
       res.redirect("/seed");
       return;
@@ -76,12 +76,12 @@ router.get("/home", withAuth, async (req, res) => {
 router.get("/seed", withAuth, async (req, res) => {
   try {
     //checks if data already exists
-    const bugData = await Bug.findOne({ where: { name: 'Common Butterfly' } });
+    const bugData = await Bug.findOne({ where: { name: "Common Butterfly" } });
     if (bugData) {
       res.redirect("/home");
       return;
     }
-  
+
     res.render("seed");
   } catch (err) {
     res.status(500).json(err);
@@ -123,6 +123,20 @@ router.get("/fish", withAuth, async (req, res) => {
 
     res.render("fish", {
       fish,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/fossil", withAuth, async (req, res) => {
+  try {
+    const fossilData = await Fossil.findAll();
+    const fossil = fossilData.map((fossil) => fossil.get({ plain: true }));
+
+    res.render("fossil", {
+      fossil,
       logged_in: true,
     });
   } catch (err) {

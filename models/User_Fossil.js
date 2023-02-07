@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection");
 
-class User_Fish extends Model {}
+class User_Fossil extends Model {}
 
-User_Fish.init(
+User_Fossil.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -18,14 +18,14 @@ User_Fish.init(
         key: "id",
       },
     },
-    fishId: {
+    fossilId: {
       type: DataTypes.INTEGER,
       references: {
-        model: "fish",
+        model: "fossil",
         key: "id",
       },
     },
-    fishName: {
+    fossilName: {
       type: DataTypes.STRING,
     },
     isDonated: {
@@ -38,8 +38,8 @@ User_Fish.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "user_fish",
+    modelName: "user_fossil",
   }
 );
 
-module.exports = User_Fish;
+module.exports = User_Fossil;
