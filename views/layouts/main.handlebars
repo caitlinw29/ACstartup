@@ -29,8 +29,8 @@
       {{#if logged_in}}
       <section id="sidebar">
         <ion-icon name="home" class="sidebar-icon secondary" id="homeNav"></ion-icon>
-        <ion-icon name="search" class="sidebar-icon secondary"></ion-icon>
-        <ion-icon name="fish" class="sidebar-icon" id="museumIcon"></ion-icon>
+        <ion-icon name="search" class="sidebar-icon secondary" id="searchNav"></ion-icon>
+        <ion-icon name="fish" class="sidebar-icon" id="museumNav"></ion-icon>
         <div class="sidepanel">
           <a href="/bug">Bugs</a>
           <a href="/fish">Fish</a>
@@ -38,7 +38,7 @@
           <a href="#">Art</a>
           <a href="#">Fossils</a>
         </div>
-        <ion-icon name="cart" class="sidebar-icon"></ion-icon>
+        <ion-icon name="cart" class="sidebar-icon" id="catalogNav"></ion-icon>
         <div class="sidepanel">
           <a href="#">Furniture</a>
           <a href="#">Clothing</a>
@@ -46,37 +46,37 @@
           <a href="#">Wallpaper/Flooring/Rugs</a>
           <a href="#">Specialty items</a>
         </div>
-        <ion-icon name="construct" class="sidebar-icon"></ion-icon>
+        <ion-icon name="construct" class="sidebar-icon" id="diyNav"></ion-icon>
         <div class="sidepanel">
           <a href="#">All</a>
           <a href="#">Crafting DIY</a>
           <a href="#">Cooking DIY</a>
         </div>
-        <ion-icon name="ribbon" class="sidebar-icon"></ion-icon>
-        <ion-icon name="paw" class="sidebar-icon"></ion-icon>
+        <ion-icon name="ribbon" class="sidebar-icon" id="achievementNav"></ion-icon>
+        <ion-icon name="paw" class="sidebar-icon" id="villagerNav"></ion-icon>
         <div class="sidepanel">
           <a href="#">Posters/Photos</a>
           <a href="#">HHP</a>
           <a href="#">Reactions</a>
           <a href="#">Villagers</a>
         </div>
-        <ion-icon name="leaf" class="sidebar-icon"></ion-icon>
+        <ion-icon name="leaf" class="sidebar-icon" id="natureNav"></ion-icon>
         <div class="sidepanel">
           <a href="#">Flowers</a>
           <a href="#">Gyroids</a>
           <a href="#">Misc.</a>
         </div>
-        <ion-icon name="time" class="sidebar-icon secondary"></ion-icon>
+        <ion-icon name="time" class="sidebar-icon secondary" id="activeCreatureNav"></ion-icon>
         {{!-- Add a direct link on click to map/chart--}}
-        <ion-icon name="map" class="sidebar-icon secondary"></ion-icon>
-        <ion-icon name="cog" class="sidebar-icon secondary"></ion-icon>
+        <ion-icon name="map" class="sidebar-icon secondary" id="chartNav"></ion-icon>
+        <ion-icon name="cog" class="sidebar-icon secondary" id="settingsNav"></ion-icon>
         <div class="sidepanel">
+          <a href="#">Time/Date</a>
           <a href="#">Settings</a>
           <a href="#">About</a>
-          <a href="#">Time/Date</a>
         </div>
         {{!-- This will be removed and an acnh character will be added --}}
-        <ion-icon name="person" class="sidebar-icon secondary"></ion-icon>
+        <ion-icon name="person" class="sidebar-icon secondary" id="profileNav"></ion-icon>
       </section>
       
       <!-- Render the sub layout -->

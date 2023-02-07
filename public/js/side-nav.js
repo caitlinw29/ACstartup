@@ -23,8 +23,21 @@ function checkSize(x) {
     iconNavs.forEach((icon) =>
       icon.addEventListener("click", function (e) {
         panels.forEach((panel) => panel.style.width = "0");
-        e.currentTarget.nextElementSibling.style.width = "50%";
+        e.currentTarget.nextElementSibling.style.width = "fit-content";
         e.currentTarget.nextElementSibling.style.left = "75px";
+        if (e.currentTarget.id === "museumNav"){
+          e.currentTarget.nextElementSibling.style.top = "17%";
+        } else if (e.currentTarget.id === "catalogNav"){
+          e.currentTarget.nextElementSibling.style.top = "24.75%";
+        } else if (e.currentTarget.id === "diyNav"){
+          e.currentTarget.nextElementSibling.style.top = "33%";
+        } else if (e.currentTarget.id === "villagerNav"){
+          e.currentTarget.nextElementSibling.style.top = "49%";
+        } else if (e.currentTarget.id === "natureNav"){
+          e.currentTarget.nextElementSibling.style.top = "57%";
+        } else if (e.currentTarget.id === "settingsNav"){
+          e.currentTarget.nextElementSibling.style.top = "80%";
+        }
       })
     );
   } else {
@@ -41,8 +54,21 @@ function checkSize(x) {
     iconNavs.forEach((icon) =>
       icon.addEventListener("click", function (e) {
         panels.forEach((panel) => panel.style.width = "0");
-        e.currentTarget.nextElementSibling.style.width = "50%";
+        e.currentTarget.nextElementSibling.style.width = "fit-content";
         e.currentTarget.nextElementSibling.style.left = "100px";
+        if (e.currentTarget.id === "museumNav"){
+          e.currentTarget.nextElementSibling.style.top = "17%";
+        } else if (e.currentTarget.id === "catalogNav"){
+          e.currentTarget.nextElementSibling.style.top = "24.75%";
+        } else if (e.currentTarget.id === "diyNav"){
+          e.currentTarget.nextElementSibling.style.top = "33%";
+        } else if (e.currentTarget.id === "villagerNav"){
+          e.currentTarget.nextElementSibling.style.top = "49%";
+        } else if (e.currentTarget.id === "natureNav"){
+          e.currentTarget.nextElementSibling.style.top = "57%";
+        } else if (e.currentTarget.id === "settingsNav"){
+          e.currentTarget.nextElementSibling.style.top = "75%";
+        }
       })
     );
   }
@@ -131,5 +157,25 @@ function moveTouch(e) {
 
 //when user clicks home button, redirect to home
 document.querySelector("#homeNav").addEventListener("click", function () {
+  document.location.replace("/home");
+});
+
+document.querySelector("#searchNav").addEventListener("click", function () {
+  document.location.replace("/home");
+});
+
+document.querySelector("#achievementNav").addEventListener("click", function () {
+  document.location.replace("/home");
+});
+
+document.querySelector("#activeCreatureNav").addEventListener("click", function () {
+  document.location.replace("/home");
+});
+
+document.querySelector("#chartNav").addEventListener("click", function () {
+  document.location.replace("/home");
+});
+
+document.querySelector("#profileNav").addEventListener("click", function () {
   document.location.replace("/home");
 });

@@ -331,7 +331,7 @@ section#content {
 }
 
 .sidepanel {
-  height: 100%;
+  height: fit-content;
   width: 0;
   position: fixed;
   z-index: 1;
@@ -339,15 +339,15 @@ section#content {
   left: 0;
   background-color: var(--black);
   overflow-x: hidden;
-  padding-top: 60px;
 }
 
 .sidepanel a {
   padding: 8px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 4vw;
   color: var(--green);
   display: block;
+  width: fit-content;
 }
 
 .sidepanel a:hover {
