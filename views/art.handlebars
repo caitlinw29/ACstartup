@@ -1,0 +1,21 @@
+{{#each art as |art| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <img class="creature-img" src="{{art.icon}}" alt="{{art.name}}"/>
+      <h2> {{art.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p>All art will cost {{art.buyPriceString}} bells</p>
+      <p> Sell for: {{art.sellPriceString}} bells </p>
+      {{#if hasFake}}
+        <p>* This artwork has a fake version pictured below. {{authenticityNote}} *</p>
+        <img class="creature-img" src="{{art.fakeIcon}}" alt="Fake version of {{art.name}}"/>
+
+      {{/if}}
+      <button class="artDonateBtn donateButton" id="{{art.id}}" data-name="{{art.name}}">Donate</button>
+    </div>
+  </div>
+{{/each}}
+
+<script src="./js/art.js"></script>

@@ -8,6 +8,8 @@ const Sea = require("./Sea");
 const User_Sea = require("./User_Sea");
 const Fossil = require("./Fossil");
 const User_Fossil = require("./User_Fossil");
+const Art = require("./Art");
+const User_Art = require("./User_Art");
 
 //one to one relationship between profile and user
 User.hasOne(Profile, {
@@ -71,6 +73,19 @@ User_Fossil.belongsTo(Fossil, {
   as: "fossil",
 });
 
+User.belongsToMany(Art, { through: "User_Art" });
+Art.belongsToMany(User, { through: "User_Art" });
+
+User_Art.belongsTo(User, {
+  foreignKey: "userId",
+  as: "user",
+});
+
+User_Art.belongsTo(Art, {
+  foreignKey: "artId",
+  as: "art",
+});
+
 module.exports = {
   User,
   Profile,
@@ -82,4 +97,6 @@ module.exports = {
   User_Sea,
   Fossil,
   User_Fossil,
+  Art,
+  User_Art,
 };

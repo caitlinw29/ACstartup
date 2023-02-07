@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Bug, Fish, Sea, Fossil } = require("../models");
+const { User, Bug, Fish, Sea, Fossil, Art } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
@@ -137,6 +137,20 @@ router.get("/fossil", withAuth, async (req, res) => {
 
     res.render("fossil", {
       fossil,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/art", withAuth, async (req, res) => {
+  try {
+    const artData = await Art.findAll();
+    const art = artData.map((art) => art.get({ plain: true }));
+
+    res.render("art", {
+      art,
       logged_in: true,
     });
   } catch (err) {
