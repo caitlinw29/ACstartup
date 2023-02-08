@@ -1,6 +1,5 @@
 const panels = document.querySelectorAll(".sidepanel");
 
-
 function checkSize(x) {
   const iconNavs = document.querySelectorAll(".sidebar-icon");
   if (x.matches) {
@@ -15,27 +14,27 @@ function checkSize(x) {
     window.onclick = function (event) {
       if (event.target.matches("#content")) {
         closeNav();
-        panels.forEach((panel) => panel.style.width = "0");
+        panels.forEach((panel) => (panel.style.width = "0"));
         document.body.style.overflow = "visible";
       }
     };
-    
+
     iconNavs.forEach((icon) =>
       icon.addEventListener("click", function (e) {
-        panels.forEach((panel) => panel.style.width = "0");
+        panels.forEach((panel) => (panel.style.width = "0"));
         e.currentTarget.nextElementSibling.style.width = "fit-content";
         e.currentTarget.nextElementSibling.style.left = "75px";
-        if (e.currentTarget.id === "museumNav"){
+        if (e.currentTarget.id === "museumNav") {
           e.currentTarget.nextElementSibling.style.top = "17%";
-        } else if (e.currentTarget.id === "catalogNav"){
+        } else if (e.currentTarget.id === "catalogNav") {
           e.currentTarget.nextElementSibling.style.top = "24.75%";
-        } else if (e.currentTarget.id === "diyNav"){
+        } else if (e.currentTarget.id === "diyNav") {
           e.currentTarget.nextElementSibling.style.top = "33%";
-        } else if (e.currentTarget.id === "villagerNav"){
+        } else if (e.currentTarget.id === "villagerNav") {
           e.currentTarget.nextElementSibling.style.top = "49%";
-        } else if (e.currentTarget.id === "natureNav"){
+        } else if (e.currentTarget.id === "natureNav") {
           e.currentTarget.nextElementSibling.style.top = "57%";
-        } else if (e.currentTarget.id === "settingsNav"){
+        } else if (e.currentTarget.id === "settingsNav") {
           e.currentTarget.nextElementSibling.style.top = "80%";
         }
       })
@@ -47,26 +46,26 @@ function checkSize(x) {
         removeMenu();
       } else if (event.target.matches("#content")) {
         closeNav();
-        panels.forEach((panel) => panel.style.width = "0");
+        panels.forEach((panel) => (panel.style.width = "0"));
         showMenu();
       }
     };
     iconNavs.forEach((icon) =>
       icon.addEventListener("click", function (e) {
-        panels.forEach((panel) => panel.style.width = "0");
+        panels.forEach((panel) => (panel.style.width = "0"));
         e.currentTarget.nextElementSibling.style.width = "fit-content";
         e.currentTarget.nextElementSibling.style.left = "100px";
-        if (e.currentTarget.id === "museumNav"){
+        if (e.currentTarget.id === "museumNav") {
           e.currentTarget.nextElementSibling.style.top = "17%";
-        } else if (e.currentTarget.id === "catalogNav"){
+        } else if (e.currentTarget.id === "catalogNav") {
           e.currentTarget.nextElementSibling.style.top = "24.75%";
-        } else if (e.currentTarget.id === "diyNav"){
+        } else if (e.currentTarget.id === "diyNav") {
           e.currentTarget.nextElementSibling.style.top = "33%";
-        } else if (e.currentTarget.id === "villagerNav"){
+        } else if (e.currentTarget.id === "villagerNav") {
           e.currentTarget.nextElementSibling.style.top = "49%";
-        } else if (e.currentTarget.id === "natureNav"){
+        } else if (e.currentTarget.id === "natureNav") {
           e.currentTarget.nextElementSibling.style.top = "57%";
-        } else if (e.currentTarget.id === "settingsNav"){
+        } else if (e.currentTarget.id === "settingsNav") {
           e.currentTarget.nextElementSibling.style.top = "75%";
         }
       })
@@ -129,7 +128,7 @@ function moveTouch(e) {
     // sliding horizontally
     if (diffX > 0) {
       // swiped left
-      panels.forEach((panel) => panel.style.width = "0");
+      panels.forEach((panel) => (panel.style.width = "0"));
       closeNav();
       document.body.style.overflow = "visible";
     } else {
@@ -164,13 +163,17 @@ document.querySelector("#searchNav").addEventListener("click", function () {
   document.location.replace("/home");
 });
 
-document.querySelector("#achievementNav").addEventListener("click", function () {
-  document.location.replace("/home");
-});
+document
+  .querySelector("#achievementNav")
+  .addEventListener("click", function () {
+    document.location.replace("/achievement");
+  });
 
-document.querySelector("#activeCreatureNav").addEventListener("click", function () {
-  document.location.replace("/home");
-});
+document
+  .querySelector("#activeCreatureNav")
+  .addEventListener("click", function () {
+    document.location.replace("/home");
+  });
 
 document.querySelector("#chartNav").addEventListener("click", function () {
   document.location.replace("/home");
