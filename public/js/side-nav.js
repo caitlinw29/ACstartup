@@ -2,6 +2,7 @@ const panels = document.querySelectorAll(".sidepanel");
 
 function checkSize(x) {
   const iconNavs = document.querySelectorAll(".sidebar-icon");
+  const content = document.querySelector("#content");
   if (x.matches) {
     // If media query matches
     // Show sidenav on side swipe for phones
@@ -12,7 +13,7 @@ function checkSize(x) {
       .querySelector("body")
       .addEventListener("touchmove", moveTouch, { passive: true });
     window.onclick = function (event) {
-      if (event.target.matches("#content")) {
+      if (content.contains(event.target)) {
         closeNav();
         panels.forEach((panel) => (panel.style.width = "0"));
         document.body.style.overflow = "visible";
@@ -25,15 +26,15 @@ function checkSize(x) {
         e.currentTarget.nextElementSibling.style.width = "fit-content";
         e.currentTarget.nextElementSibling.style.left = "75px";
         if (e.currentTarget.id === "museumNav") {
-          e.currentTarget.nextElementSibling.style.top = "17%";
+          e.currentTarget.nextElementSibling.style.top = "18%";
         } else if (e.currentTarget.id === "catalogNav") {
-          e.currentTarget.nextElementSibling.style.top = "24.75%";
+          e.currentTarget.nextElementSibling.style.top = "26%";
         } else if (e.currentTarget.id === "diyNav") {
-          e.currentTarget.nextElementSibling.style.top = "33%";
+          e.currentTarget.nextElementSibling.style.top = "34%";
         } else if (e.currentTarget.id === "villagerNav") {
-          e.currentTarget.nextElementSibling.style.top = "49%";
+          e.currentTarget.nextElementSibling.style.top = "51%";
         } else if (e.currentTarget.id === "natureNav") {
-          e.currentTarget.nextElementSibling.style.top = "57%";
+          e.currentTarget.nextElementSibling.style.top = "59%";
         } else if (e.currentTarget.id === "settingsNav") {
           e.currentTarget.nextElementSibling.style.top = "80%";
         }
@@ -44,7 +45,7 @@ function checkSize(x) {
       if (event.target.matches("#menu-icon")) {
         openNav();
         removeMenu();
-      } else if (event.target.matches("#content")) {
+      } else if (content.contains(event.target)) {
         closeNav();
         panels.forEach((panel) => (panel.style.width = "0"));
         showMenu();
@@ -66,7 +67,7 @@ function checkSize(x) {
         } else if (e.currentTarget.id === "natureNav") {
           e.currentTarget.nextElementSibling.style.top = "57%";
         } else if (e.currentTarget.id === "settingsNav") {
-          e.currentTarget.nextElementSibling.style.top = "75%";
+          e.currentTarget.nextElementSibling.style.top = "70%";
         }
       })
     );

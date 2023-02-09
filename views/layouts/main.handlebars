@@ -30,6 +30,7 @@
     {{/unless}}
 
     <main>
+      {{#unless achievements}}
       {{#if logged_in}}
       <section id="sidebar">
         <ion-icon name="home" class="sidebar-icon secondary" id="homeNav"></ion-icon>
@@ -78,6 +79,7 @@
           <a href="#">Time/Date</a>
           <a href="#">Settings</a>
           <a href="#">About</a>
+          <a href="/" id="log-out">Log out</a>
         </div>
         {{!-- This will be removed and an acnh character will be added --}}
         <ion-icon name="person" class="sidebar-icon secondary" id="profileNav"></ion-icon>
@@ -86,8 +88,8 @@
       <!-- Render the sub layout -->
       <section id="content">
         <ion-icon name="menu" id="menu-icon"></ion-icon>
-        <a href="/" id="log-out"> Log out</a>
      {{/if}}
+     {{/unless}}
       {{{ body }}}
       </section>
     </main>
