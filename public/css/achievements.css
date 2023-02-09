@@ -109,6 +109,10 @@ main {
   font-weight: 700;
 }
 
+.nook-miles__count:hover {
+  cursor: pointer;
+}
+
 .noSelect {
   -webkit-tap-highlight-color:transparent;
   -moz-tap-highlight-color:transparent;
@@ -128,14 +132,14 @@ main {
 .trackImg {
   z-index: 1;
   position: absolute;
-  height: 60%;
+  height: 75%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .zigzag {
-  height: 75%;
+  height: 85%;
 }
 
 

@@ -1,3 +1,18 @@
+const achievementCards = document.querySelectorAll(".achievement");
+for (const achievement of achievementCards) {
+  achievement.addEventListener("click", function(){
+    //remove all achievements, and set back button where home button used to be
+    document.querySelector("#homeAchievement").removeAttribute("name");
+    document.querySelector("#homeAchievement").setAttribute("name", "arrow-undo");
+    document.querySelector(".achievements-wrapper").style.display = "none";
+    document.querySelector("#logoHref").setAttribute("href", "/achievement");
+    console.log(achievement.id);
+  })
+}
+
+
+
+
 const achData = [
   {
     "Name": "(island name) Miles!",
