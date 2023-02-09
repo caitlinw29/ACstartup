@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Bug, Fish, Sea, Fossil, Art, Achievement } = require("../models");
+const { User, Bug, Fish, Sea, Fossil, Art, Achievement, Stamp } = require("../models");
 const withAuth = require("../utils/auth");
 
 //route to render landing page
@@ -160,13 +160,20 @@ router.get("/art", withAuth, async (req, res) => {
 
 router.get("/achievement", withAuth, async (req, res) => {
   try {
-    // const achievementData = await Achievement.findAll();
-    // const achievement = achievementData.map((achievement) =>
-    //   achievement.get({ plain: true })
-    // );
+    const achievementData = await Achievement.findAll();
+    const achievement = achievementData.map((achievement) =>
+      achievement.get({ plain: true })
+    );
+
+    const stampData = await Stamp.findAll();
+    const stamp = stampData.map((stamp) =>
+      stamp.get({ plain: true })
+    );
+
 
     res.render("achievement", {
-      // achievement,
+      achievement,
+      stamp,
       achievements: true,
       logged_in: true,
     });
