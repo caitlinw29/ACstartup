@@ -276,25 +276,9 @@ footer ul li {
   color: var(--white);
 }
 
-.tertiary {
-  color: #c2cff2;
-  position: fixed;
-  top: 1%;
-  left: 1%;
-  width: 4%;
-  z-index: 20;
-  background: var(--black);
-  border-radius: 10%;
-  padding: 1%;
-}
-
 .sidebar-icon:hover {
   cursor: pointer;
   color: var(--sky);
-}
-
-.tertiary:hover {
-  color: var(--white);
 }
 
 #menu-icon {
@@ -393,9 +377,5 @@ section#content {
 
   section#content {
     padding: 5%;
-  }
-
-  .tertiary {
-    width: 10%;
   }
 }

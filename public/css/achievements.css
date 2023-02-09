@@ -19,11 +19,94 @@ body {
   margin: 0;
   height: 100%;
   font-family: "Nunito", sans-serif;
+  background: #c2cff2 url("../img/paper-bg.png") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 main {
   height: 100%;
-  background: #c2cff2 url("../img/paper-bg.png") center repeat;
+}
+
+/* --------------- */
+/*       HEADER     */
+/* --------------- */
+
+.header {
+  height: 12.5rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url('../img/banner-bg-rounded.png') center repeat-x;
+  background-size: contain;
+  z-index: 100;
+}
+
+.logo-wrapper {
+  width: 75rem;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo {
+  width: 8.4rem;
+  height: 8.4rem;
+  position: absolute;
+  top: 50%;
+  left: 3rem;
+  transform: translateY(-50%);
+  color: rgb(140, 159, 248);
+  opacity: 0.75;
+}
+
+.logo:hover {
+  color: #c2cff2;
+}
+
+.nook-miles {
+  position: fixed;
+  top: 2rem;
+  right: 3.4rem;
+  background: url('../img/nook-miles-bg.svg') center no-repeat;
+  width: 19rem;
+  height: 10.7rem;
+  transform: rotate(3deg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
+}
+
+.nook-miles__icon {
+  width: 6.6rem;
+  height: 3.2rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.2rem 0 0 0.3rem;
+}
+
+.nook-miles__icon img {
+  width: 90%;
+  transform: rotate(2deg);
+}
+
+.nook-miles__count {
+  width: 17.7rem;
+  height: 6.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bfdcfe;
+  font-size: 3.4rem;
+  padding-top: 0.5rem;
+  font-weight: 700;
 }
 
 .noSelect {
@@ -216,6 +299,11 @@ main {
 /*  MEDIA QUERIES  */
 /* --------------- */
 
+@media (min-width: 562px) {
+  .logo-wrapper { width: 114.2rem; }
+  .logo { left: -1.2rem; }
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 37%;
@@ -244,6 +332,10 @@ main {
 
   .stamp-reward {
     font-size: 1.6rem;
+  }
+
+  .nook-miles {
+    z-index: 1000;
   }
 
 }
