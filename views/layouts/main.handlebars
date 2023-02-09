@@ -17,8 +17,7 @@
   </head>
 
   <body>
-    {{#if logged_in}}
-    {{else}}
+    {{#unless logged_in}}
     <nav class="nav m-1">
       <a href="/" class="mr-5" id="homeIcon"><ion-icon name="home"></ion-icon></a>
 
@@ -28,7 +27,7 @@
         <li><a href="/about"><ion-icon name="information-circle"></ion-icon> <br/>About</a></li>
       </ul>
     </nav>
-    {{/if}}
+    {{/unless}}
 
     <main>
       {{#if logged_in}}
