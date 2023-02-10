@@ -10,29 +10,37 @@
     </div>
 </header>
 
-<div class="achievements-wrapper">
+<div class="achievements-wrapper" id="allAchievements">
   <div class="achievements">
     {{#each achievement as |achievement| }}
-      <div class="achievement achievement--{{achievement.category}} noSelect" tabindex="0" id="{{achievement.id}}">
+      <div class="achievement transform achievement--{{achievement.category}} noSelect" tabindex="0" id="{{achievement.id}}" data-category="{{achievement.category}}" data-tiers="{{achievement.numTiers}}">
         <div class="achievement__title">{{achievement.name}}</div>
         <div class="stamp-wrapper">
-          <img src="{{achievement.track}}" class="trackImg"/>
+          <img src="{{achievement.track}}" class="trackImg" data-track="{{achievement.trackSolo}}"/>
         </div>
       </div>
     {{/each}}
   </div>
 </div>
 
+<div class="achievements-wrapper"  id="noDisplaySolo">
+  <div class="achievements">
+    <div class="achievement soloDisplay achievement--event noSelect" tabindex="0">
+      <div class="achievement__title"></div>
+      <div class="stamp-wrapper">
+        <img src="" class="trackImg"/>
+        <div class="stamps">
 
-<div id="noDisplaySolo" tabindex="0">
-  <div class="achievement__title"></div>
-  <div class="stamp-wrapper">
-    <img src="./img/track-straight-1.svg" class="trackImg"/>
-    {{#each stamp as |stamp| }}
-      <button class="stampBtn" id="{{stamp.id}}" data-name="{{achievement.name}}">Achieve</button>  
-    {{/each}}
+        </div>
+        {{!-- {{#each stamp as |stamp| }}
+         <button class="stampBtn" id="{{stamp.id}}" data-name="{{achievement.name}}">Achieve</button>  
+        {{/each}} --}}
+      </div>
+    </div>
   </div>
 </div>
+
+
 
 
 <script src="./js/achievement.js"></script>
