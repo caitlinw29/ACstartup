@@ -148,6 +148,20 @@ main {
   display: none;
 }
 
+.carouselArrow {
+  color: rgb(140, 159, 248);
+  width: 100px;
+  height: 100px;
+  align-items: center;
+}
+
+.carouselArrow:hover {
+  color: var(--lavender);
+  width: 100px;
+  height: 100px;
+  align-items: center;
+  cursor: pointer;
+}
 
 /* --------------- */
 /*   ACHIEVEMENTS  */
@@ -421,10 +435,10 @@ main {
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 575px){
   .soloDisplay {
     width: 100%;
-    height: 75%;
+    height: 100%;
     border: none;
     margin: 0;
     padding: 0;
@@ -432,12 +446,15 @@ main {
   }
 
   #noDisplaySolo .stamp-wrapper {
-    margin-top: 30%;
+    margin-top: 25%;
   }
 
   #noDisplaySolo .trackImg {
     width: 90%;
-    height: 75%;
+  }
+
+  .carouselArrow {
+    display: none;
   }
 }
 

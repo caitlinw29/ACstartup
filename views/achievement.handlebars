@@ -13,10 +13,10 @@
 <div class="achievements-wrapper" id="allAchievements">
   <div class="achievements">
     {{#each achievement as |achievement| }}
-      <div class="achievement transform achievement--{{achievement.category}} noSelect" tabindex="0" id="{{achievement.id}}" data-category="{{achievement.category}}" data-tiers="{{achievement.numTiers}}">
+      <div class="achievement transform achievement--{{achievement.category}} noSelect" tabindex="0" id="{{achievement.id}}" data-category="{{achievement.category}}">
         <div class="achievement__title">{{achievement.name}}</div>
         <div class="stamp-wrapper">
-          <img src="{{achievement.track}}" class="trackImg" data-track="{{achievement.trackSolo}}"/>
+          <img src="{{achievement.track}}" class="trackImg"/>
         </div>
       </div>
     {{/each}}
@@ -25,18 +25,19 @@
 
 <div class="achievements-wrapper"  id="noDisplaySolo">
   <div class="achievements">
-    <div class="achievement soloDisplay achievement--event noSelect" tabindex="0">
-      <div class="achievement__title"></div>
+    <div class="flex-column justify-center"><ion-icon name="chevron-back" class="carouselArrow" id="prevCard"></ion-icon></div>
+    {{#each achievement as |achievement| }}
+    <div class="achievement soloDisplay achievement--{{achievement.category}} noSelect display-none" tabindex="0" id="solo{{achievement.id}}">
+      <div class="achievement__title">{{achievement.name}}</div>
       <div class="stamp-wrapper">
-        <img src="" class="trackImg"/>
+        <img src="{{achievement.trackSolo}}" class="trackImg"/>
         <div class="stamps">
-
+          {{!- Create a helper to add stamps}}
         </div>
-        {{!-- {{#each stamp as |stamp| }}
-         <button class="stampBtn" id="{{stamp.id}}" data-name="{{achievement.name}}">Achieve</button>  
-        {{/each}} --}}
       </div>
     </div>
+    {{/each}}
+    <div class="flex-column justify-center"><ion-icon name="chevron-forward" class="carouselArrow" id="nextCard" ></ion-icon></div>
   </div>
 </div>
 
