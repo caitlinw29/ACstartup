@@ -120,6 +120,10 @@ main {
   tap-highlight-color:transparent;
 }
 
+.noTextHighlight {
+  user-select: none;
+}
+
 .stamp-wrapper {
   position: absolute;
   display: block;
