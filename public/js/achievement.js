@@ -17,19 +17,23 @@ for (const achievement of achievementCards) {
     const rightArrow = document.querySelector("#nextCard");
     //make sure id is being pulled in as a number since we decrement and increment below
     let currentTargetId = parseInt(currentTarget.id);
-    leftArrow.addEventListener("click", function(){
+    //moving left with solo achievements
+    const moveLeft = () => {
       if (currentTargetId === 1){
         document.querySelector(`#solo${currentTargetId}`).classList.add("display-none");
         currentTargetId = 96;
         document.querySelector(`#solo${currentTargetId}`).classList.remove("display-none");
       } else {
+        //remove old achievement, decrement to target correct card, add achievement back to page
         document.querySelector(`#solo${currentTargetId}`).classList.add("display-none");
         currentTargetId -= 1;
         document.querySelector(`#solo${currentTargetId}`).classList.remove("display-none");
       }
-    });
-    
-    rightArrow.addEventListener("click", function(){
+    };
+    leftArrow.addEventListener("click", moveLeft);
+
+    //moving right with solo achievements
+    const moveRight = () => {
       if (currentTargetId === 96){
         document.querySelector(`#solo${currentTargetId}`).classList.add("display-none");
         currentTargetId = 1;
@@ -39,8 +43,42 @@ for (const achievement of achievementCards) {
         currentTargetId += 1;
         document.querySelector(`#solo${currentTargetId}`).classList.remove("display-none");
       }
-    });
-  
+    };
+    rightArrow.addEventListener("click", moveRight);
+
+    //using swipe to move left and right
+    document
+    .querySelector("body")
+    .addEventListener("touchstart", startTouch, { passive: true });
+    document
+    .querySelector("body")
+    .addEventListener("touchmove", moveTouch, { passive: true });
+
+    var initialX = null;
+    function startTouch(e) {
+      initialX = e.touches[0].clientX;
+    }
+
+    function moveTouch(e) {
+      if (initialX === null) {
+        return;
+      }
+      var currentX = e.touches[0].clientX;
+      var diffX = initialX - currentX;
+
+      // sliding horizontally
+      if (diffX > 0) {
+        // swiped left
+        moveRight();
+      } else {
+        // swiped right
+        moveLeft();
+      }
+      initialX = null;
+      e.preventDefault();
+    }
+
+
     //create stamp buttons dynamically
     // const tiers = currentTarget.dataset.tiers;
     // for (let i=1; i<=tiers; i++){
