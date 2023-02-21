@@ -1,0 +1,23 @@
+{{#each furniture as |furniture| }}
+  <div class="card text-center">
+    <div class="card-header">
+      <h2> {{furniture.name}} </h2>
+    </div>
+
+    <div class="card-contents">
+      <p> Buy price: {{furniture.buyPriceString}} bells </p>
+      <p> Poki price: {{furniture.pokiBuyPriceString}} poki </p>
+      <p> Sell price: {{furniture.sellPriceString}} bells </p>
+      <p> Category: {{furniture.category}}</p>
+      <p> Availability: {{furniture.availability}}</p>
+      {{#if furniture.customizable}}
+      <p>Customizable: Yes</p>
+      <p> Custom Kits Required: {{furniture.custom_kits}}</p>
+      {{/if}}
+      <p> Function: {{furniture.function}}</p>
+      <p> Variation: {{furniture.variations}}</p>
+    </div>
+  </div>
+{{/each}}
+
+<script src="./js/furniture.js"></script>

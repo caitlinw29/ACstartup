@@ -2576,6 +2576,267 @@ const saveStamp = async (id, numTiers, category, tiers, rewards) => {
     }
 };
 
+let id=0;
+const saveFurniture = async () => {
+  var requestUrl = baseURL + "/nh/furniture?category=Housewares";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        id++;
+        const name = data[i].name;
+        const words = name.split(" ");
+        const capitalName = words
+          .map((word) => {
+            return word[0].toUpperCase() + word.substring(1);
+          })
+          .join(" ");
+        let buyPriceNum = 0;
+        let buyPriceString = "";
+        if (data[i].buy.length > 0) {
+          buyPriceNum = data[i].buy[0].price;
+          buyPriceString = numberWithCommas(buyPriceNum);
+        }
+        let pokiBuyPriceNum = 0;
+        let pokiBuyPriceString = "";
+        if (data[i].buy.length === 2) {
+          pokiBuyPriceNum = data[i].buy[1].price;
+          pokiBuyPriceString = numberWithCommas(pokiBuyPriceNum);
+        }
+        const sellPriceNum = data[i].sell;
+        const sellPriceString = numberWithCommas(sellPriceNum);
+        const category = data[i].category;
+        const customizable = data[i].customizable;
+        const custom_kits = data[i].custom_kits;
+        let functionString = "";
+        if (data[i].functions.length > 0){
+          functionString = data[i].functions[0];
+        }
+        let variations = false;
+        if (data[i].variation_total > 0 && customizable === false){
+          variations = true;
+        }
+        let availabilityString = '';
+        for (let j = 0; j<data[i].availability.length; j++){
+          availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
+        }
+
+        const icon = data[i].variations[0].image_url;
+        fetch("/api/furniture", {
+          method: "POST",
+          body: JSON.stringify({
+            id,
+            capitalName,
+            buyPriceNum,
+            buyPriceString,
+            pokiBuyPriceNum,
+            pokiBuyPriceString,
+            sellPriceNum,
+            sellPriceString,
+            category,
+            availabilityString,
+            customizable,
+            custom_kits,
+            functionString,
+            variations,
+            icon,
+          }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+};
+
+const saveWallMounted = async () => {
+  var requestUrl = baseURL + "/nh/furniture?category=Wall-mounted";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        id++;
+        const name = data[i].name;
+        const words = name.split(" ");
+        const capitalName = words
+          .map((word) => {
+            return word[0].toUpperCase() + word.substring(1);
+          })
+          .join(" ");
+        let buyPriceNum = 0;
+        let buyPriceString = "";
+        if (data[i].buy.length > 0) {
+          buyPriceNum = data[i].buy[0].price;
+          buyPriceString = numberWithCommas(buyPriceNum);
+        }
+        let pokiBuyPriceNum = 0;
+        let pokiBuyPriceString = "";
+        if (data[i].buy.length === 2) {
+          pokiBuyPriceNum = data[i].buy[1].price;
+          pokiBuyPriceString = numberWithCommas(pokiBuyPriceNum);
+        }
+        const sellPriceNum = data[i].sell;
+        const sellPriceString = numberWithCommas(sellPriceNum);
+        const category = data[i].category;
+        const customizable = data[i].customizable;
+        const custom_kits = data[i].custom_kits;
+        let functionString = "";
+        if (data[i].functions.length > 0){
+          functionString = data[i].functions[0];
+        }
+        let variations = false;
+        if (data[i].variation_total > 0 && customizable === false){
+          variations = true;
+        }
+        let availabilityString = '';
+        for (let j = 0; j<data[i].availability.length; j++){
+          availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
+        }
+
+        const icon = data[i].variations[0].image_url;
+
+        fetch("/api/furniture", {
+          method: "POST",
+          body: JSON.stringify({
+            id,
+            capitalName,
+            buyPriceNum,
+            buyPriceString,
+            pokiBuyPriceNum,
+            pokiBuyPriceString,
+            sellPriceNum,
+            sellPriceString,
+            category,
+            availabilityString,
+            customizable,
+            custom_kits,
+            functionString,
+            variations,
+            icon,
+          }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+};
+
+const saveMiscFurn = async () => {
+  var requestUrl = baseURL + "/nh/furniture?category=Miscellaneous";
+  fetch(requestUrl, {
+    method: "GET",
+    headers: {
+      "X-API-KEY": "",
+      "Accept-Version": "1.0.0",
+      "Content-Type": "application/json",
+    },
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      for (let i = 0; i < data.length; i++) {
+        id++;
+        const name = data[i].name;
+        const words = name.split(" ");
+        const capitalName = words
+          .map((word) => {
+            return word[0].toUpperCase() + word.substring(1);
+          })
+          .join(" ");
+        let buyPriceNum = 0;
+        let buyPriceString = "";
+        if (data[i].buy.length > 0) {
+          buyPriceNum = data[i].buy[0].price;
+          buyPriceString = numberWithCommas(buyPriceNum);
+        }
+        let pokiBuyPriceNum = 0;
+        let pokiBuyPriceString = "";
+        if (data[i].buy.length === 2) {
+          pokiBuyPriceNum = data[i].buy[1].price;
+          pokiBuyPriceString = numberWithCommas(pokiBuyPriceNum);
+        }
+        const sellPriceNum = data[i].sell;
+        const sellPriceString = numberWithCommas(sellPriceNum);
+        const category = data[i].category;
+        const customizable = data[i].customizable;
+        const custom_kits = data[i].custom_kits;
+        let functionString = "";
+        if (data[i].functions.length > 0){
+          functionString = data[i].functions[0];
+        }
+        let variations = false;
+        if (data[i].variation_total > 0 && customizable === false){
+          variations = true;
+        }
+        let availabilityString = '';
+        for (let j = 0; j<data[i].availability.length; j++){
+          availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
+        }
+
+        const icon = data[i].variations[0].image_url;
+
+        fetch("/api/furniture", {
+          method: "POST",
+          body: JSON.stringify({
+            id,
+            capitalName,
+            buyPriceNum,
+            buyPriceString,
+            pokiBuyPriceNum,
+            pokiBuyPriceString,
+            sellPriceNum,
+            sellPriceString,
+            category,
+            availabilityString,
+            customizable,
+            custom_kits,
+            functionString,
+            variations,
+            icon,
+          }),
+          headers: { "Content-Type": "application/json" },
+        })
+          .then(function (response) {
+            return response.json();
+          })
+          .then(function (data) {
+            console.log(data);
+          })
+          .catch((error) => console.error("Error:", error));
+      }
+    });
+};
+
 document.querySelector("#seedBtnBug").addEventListener("click", saveBugs);
 
 document.querySelector("#seedBtnFish").addEventListener("click", saveFish);
@@ -2587,6 +2848,11 @@ document.querySelector("#seedBtnFossil").addEventListener("click", saveFossil);
 document.querySelector("#seedBtnArt").addEventListener("click", saveArt);
 
 document.querySelector("#seedBtnAchievement").addEventListener("click", saveAchievement);
+
+document.querySelector("#seedBtnHousewares").addEventListener("click", saveFurniture);
+document.querySelector("#seedBtnWallMounted").addEventListener("click", saveWallMounted);
+document.querySelector("#seedBtnFurnMisc").addEventListener("click", saveMiscFurn);
+
 
 document.querySelector("#homeBtn").addEventListener("click", function () {
   document.location.replace("/home");

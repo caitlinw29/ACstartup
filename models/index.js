@@ -13,6 +13,10 @@ const User_Art = require("./User_Art");
 const Achievement = require("./Achievement");
 const Stamp = require("./Stamp");
 const User_Stamp = require("./User_Stamp");
+const Furniture = require("./Furniture");
+const User_Furniture = require("./User_Furniture");
+
+
 
 //one to one relationship between profile and user
 User.hasOne(Profile, {
@@ -110,6 +114,20 @@ Stamp.belongsTo(Achievement, {
   foreignKey: 'achievement_id',
 });
 
+User.belongsToMany(Furniture, { through: "User_Furniture" });
+Furniture.belongsToMany(User, { through: "User_Furniture" });
+
+User_Furniture.belongsTo(User, {
+  foreignKey: "userId",
+  as: "user",
+});
+
+User_Furniture.belongsTo(Furniture, {
+  foreignKey: "furnitureId",
+  as: "furniture",
+});
+
+
 module.exports = {
   User,
   Profile,
@@ -126,4 +144,6 @@ module.exports = {
   Achievement,
   Stamp,
   User_Stamp,
+  Furniture,
+  User_Furniture,
 };
