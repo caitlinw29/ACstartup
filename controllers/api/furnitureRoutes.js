@@ -19,7 +19,14 @@ router.post("/", async (req, res) => {
       custom_kits: req.body.custom_kits,
       function: req.body.functionBool,
       variations: req.body.variations,
-      icon: req.body.icon,
+      variationIcon1: req.body.variationIcon1,
+      variationIcon2: req.body.variationIcon2,
+      variationIcon3: req.body.variationIcon3,
+      variationIcon4: req.body.variationIcon4,
+      variationIcon5: req.body.variationIcon5,
+      variationIcon6: req.body.variationIcon6,
+      variationIcon7: req.body.variationIcon7,
+      variationIcon8: req.body.variationIcon8,
     });
 
     res.status(200).json(newFurniture);

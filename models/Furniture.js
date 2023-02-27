@@ -51,7 +51,28 @@ Furniture.init(
     variations: {
       type: DataTypes.BOOLEAN,
     },
-    icon: {
+    variationIcon1: {
+      type: DataTypes.STRING,
+    },
+    variationIcon2: {
+      type: DataTypes.STRING,
+    },
+    variationIcon3: {
+      type: DataTypes.STRING,
+    },
+    variationIcon4: {
+      type: DataTypes.STRING,
+    },
+    variationIcon5: {
+      type: DataTypes.STRING,
+    },
+    variationIcon6: {
+      type: DataTypes.STRING,
+    },
+    variationIcon7: {
+      type: DataTypes.STRING,
+    },
+    variationIcon8: {
       type: DataTypes.STRING,
     },
   },

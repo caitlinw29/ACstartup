@@ -2625,12 +2625,71 @@ const saveFurniture = async () => {
         if (data[i].variation_total > 0 && customizable === false){
           variations = true;
         }
+        let variationIcon1, variationIcon2, variationIcon3, variationIcon4, variationIcon5, variationIcon6, variationIcon7, variationIcon8;
+        if (variations) {
+          switch (data[i].variation_total) {
+            case 0:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 1:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 2:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              break;
+            case 3:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              break;
+            case 4:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              break;
+            case 5:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              break;
+            case 6:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              break;
+            case 7:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              break;
+            case 8:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              variationIcon8 = data[i].variations[7].image_url;
+          }
+        }
+          
         let availabilityString = '';
         for (let j = 0; j<data[i].availability.length; j++){
           availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
         }
 
-        const icon = data[i].variations[0].image_url;
         fetch("/api/furniture", {
           method: "POST",
           body: JSON.stringify({
@@ -2648,7 +2707,14 @@ const saveFurniture = async () => {
             custom_kits,
             functionString,
             variations,
-            icon,
+            variationIcon1,
+            variationIcon2,
+            variationIcon3,
+            variationIcon4,
+            variationIcon5,
+            variationIcon6,
+            variationIcon7,
+            variationIcon8,
           }),
           headers: { "Content-Type": "application/json" },
         })
@@ -2711,12 +2777,70 @@ const saveWallMounted = async () => {
         if (data[i].variation_total > 0 && customizable === false){
           variations = true;
         }
+        let variationIcon1, variationIcon2, variationIcon3, variationIcon4, variationIcon5, variationIcon6, variationIcon7, variationIcon8;
+        if (variations) {
+          switch (data[i].variation_total) {
+            case 0:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 1:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 2:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              break;
+            case 3:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              break;
+            case 4:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              break;
+            case 5:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              break;
+            case 6:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              break;
+            case 7:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              break;
+            case 8:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              variationIcon8 = data[i].variations[7].image_url;
+          }
+        }
+          
         let availabilityString = '';
         for (let j = 0; j<data[i].availability.length; j++){
           availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
         }
-
-        const icon = data[i].variations[0].image_url;
 
         fetch("/api/furniture", {
           method: "POST",
@@ -2735,7 +2859,14 @@ const saveWallMounted = async () => {
             custom_kits,
             functionString,
             variations,
-            icon,
+            variationIcon1,
+            variationIcon2,
+            variationIcon3,
+            variationIcon4,
+            variationIcon5,
+            variationIcon6,
+            variationIcon7,
+            variationIcon8,
           }),
           headers: { "Content-Type": "application/json" },
         })
@@ -2798,12 +2929,70 @@ const saveMiscFurn = async () => {
         if (data[i].variation_total > 0 && customizable === false){
           variations = true;
         }
+        let variationIcon1, variationIcon2, variationIcon3, variationIcon4, variationIcon5, variationIcon6, variationIcon7, variationIcon8;
+        if (variations) {
+          switch (data[i].variation_total) {
+            case 0:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 1:
+              variationIcon1 = data[i].variations[0].image_url;
+              break;
+            case 2:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              break;
+            case 3:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              break;
+            case 4:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              break;
+            case 5:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              break;
+            case 6:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              break;
+            case 7:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              break;
+            case 8:
+              variationIcon1 = data[i].variations[0].image_url;
+              variationIcon2 = data[i].variations[1].image_url;
+              variationIcon3 = data[i].variations[2].image_url;
+              variationIcon4 = data[i].variations[3].image_url;
+              variationIcon5 = data[i].variations[4].image_url;
+              variationIcon6 = data[i].variations[5].image_url;
+              variationIcon7 = data[i].variations[6].image_url;
+              variationIcon8 = data[i].variations[7].image_url;
+          }
+        }
+          
         let availabilityString = '';
         for (let j = 0; j<data[i].availability.length; j++){
           availabilityString += `from: ${data[i].availability[j].from}, note: ${data[i].availability[j].note}; `
         }
-
-        const icon = data[i].variations[0].image_url;
 
         fetch("/api/furniture", {
           method: "POST",
@@ -2822,7 +3011,14 @@ const saveMiscFurn = async () => {
             custom_kits,
             functionString,
             variations,
-            icon,
+            variationIcon1,
+            variationIcon2,
+            variationIcon3,
+            variationIcon4,
+            variationIcon5,
+            variationIcon6,
+            variationIcon7,
+            variationIcon8,
           }),
           headers: { "Content-Type": "application/json" },
         })
